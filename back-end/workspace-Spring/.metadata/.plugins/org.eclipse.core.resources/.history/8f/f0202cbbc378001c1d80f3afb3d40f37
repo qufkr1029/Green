@@ -1,0 +1,21 @@
+package spring.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
+
+import spring.bean.Client;
+
+public class Main01 {
+
+	public static void main(String[] args) {
+		Client client = new Client();		
+		client.send();
+		System.out.println("-----------------------------------");
+		ApplicationContext ctx =
+				new GenericApplicationContext("classpath:appCtx.xml");
+		// 스프링 설정파일을 읽어와서
+		// 	스프링 컨테이너 초기화
+		// 		빈 객체 생성 => 빈 객체간의 의존 주입 => 빈 객체 초기화
+	}
+
+}

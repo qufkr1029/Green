@@ -1,0 +1,18 @@
+package spring.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
+
+import spring.bean.Client;
+
+public class Main01 {
+
+	public static void main(String[] args) {
+		Client client = new Client();		
+		client.send();
+		System.out.println("-----------------------------------");
+		ApplicationContext ctx =
+				new GenericApplicationContext("classpath:appCtx.xml");
+	}
+
+}

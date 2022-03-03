@@ -1,0 +1,11 @@
+package com.green.web;
+
+public class HomeController {
+	
+	@RequestMapping("/hello")
+	public String hello(Model model, @RequestParam(value="name",required=false)String name) {
+		
+		
+	}
+	
+}

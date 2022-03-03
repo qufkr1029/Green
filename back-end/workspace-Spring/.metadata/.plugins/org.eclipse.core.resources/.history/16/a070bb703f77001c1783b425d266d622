@@ -1,0 +1,10 @@
+package ex01;
+
+public class main01 {
+
+	public static void main(String[] args) {
+		// 기존 자바 코드
+
+	}
+
+}

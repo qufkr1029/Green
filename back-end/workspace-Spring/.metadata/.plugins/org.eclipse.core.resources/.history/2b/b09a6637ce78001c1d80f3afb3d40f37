@@ -1,0 +1,11 @@
+package spring.calc;
+
+public class RecCalculator implements Calculator{
+
+	@Override
+	public long facotorial(long num) { // 재귀를 가지고 팩토리얼 작성하는 법
+		
+		return 0;
+	}
+
+}

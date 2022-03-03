@@ -1,0 +1,17 @@
+package spring.proxy;
+
+import spring.calc.Calculator;
+
+public class ExeTimeCalculator implements Calculator{
+
+	@Override
+	public long facotorial(long num) {
+		long start = System.currentTimeMillis();
+		
+		long end = System.currentTimeMillis();
+		
+		System.out.printf("factorial(%d)의 실행시간 : %d \n",num,(end-start));
+		return 0;
+	}
+	
+}

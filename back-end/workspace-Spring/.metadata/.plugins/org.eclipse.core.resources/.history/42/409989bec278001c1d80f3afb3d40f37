@@ -1,0 +1,13 @@
+package spring.bean;
+
+public class Client {
+	private String host;
+
+	public void setHost(String host) {
+		this.host = host;
+	}
+	
+	public void send() {
+		System.out.println("Client.send() to "+host);
+	}
+}

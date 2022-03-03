@@ -1,0 +1,5 @@
+package spring.vo;
+
+public class RegisterRequest { // 회원 가입시 입력할 정보를 담기 위한 클래스
+
+}

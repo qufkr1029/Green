@@ -1,0 +1,5 @@
+package spring.dao;
+
+public class MemberDao { // 가상의 DB와 연결을 위한 클래스 
+
+}

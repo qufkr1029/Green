@@ -1,0 +1,26 @@
+package spring.main;
+
+import java.util.Scanner;
+
+public class MainForAssembler {
+
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		// 회원가입 기능을 만들어 봅시다
+		
+		while(true) {
+			menu();
+		}
+		
+	}
+
+	private static void menu() {
+		System.out.println("메뉴를 선택하세요.");
+		System.out.println("1. 회원 가입");
+		System.out.println("2. 비밀번호 변경");
+		System.out.println("0. 프로그램 종료");
+		
+	}
+
+}

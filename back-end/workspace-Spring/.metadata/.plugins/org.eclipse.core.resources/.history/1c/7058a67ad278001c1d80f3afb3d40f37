@@ -1,0 +1,13 @@
+package spring.proxy;
+
+import spring.calc.Calculator;
+
+public class ExeTimeCalculator implements Calculator{
+
+	@Override
+	public long facotorial(long num) {
+		
+		return 0;
+	}
+	
+}

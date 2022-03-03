@@ -1,0 +1,18 @@
+package spring.assembler;
+
+import spring.dao.MemberDao;
+import spring.service.ChangePasswordService;
+import spring.service.MemberRegisterService;
+
+public class Assembler {  // 클래스들간의 조립
+	
+	private MemberDao memberDao;
+	private MemberRegisterService regSvc;
+	private ChangePasswordService pwdSvc;
+	
+	public Assembler() {
+		memberDao = new MemberDao();
+		regSvc = new MemberRegisterService(memberDao);
+		pwdSvc = new ChangePasswordService(memberDao);
+	}
+}

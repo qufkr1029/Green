@@ -1,0 +1,5 @@
+package spring.service;
+
+public class MemberRegisterService { // 회원 정보를 저장하기 위한 기능을 담당하는 클래스
+
+}

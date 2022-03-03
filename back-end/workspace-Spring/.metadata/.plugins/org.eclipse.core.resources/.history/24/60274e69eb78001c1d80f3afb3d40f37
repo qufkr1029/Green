@@ -1,0 +1,25 @@
+package spring.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import spring.aspect.ExeTimeAspect2;
+
+@Configuration
+public class JavaConfig {
+
+	@Bean
+	public ExeTimeAspect2 ExeTimeAspect() {
+			return new ExeTimeAspect2();
+	}
+	
+	@Bean
+	public Calculator impeCal() {
+		return new ImpeCalculator();
+	}
+	
+	@Bean
+	public Calculator recCal() {
+		return new ();
+	}
+}

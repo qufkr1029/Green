@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="ex02_t"/>
+<aop-project name="ex04_t"/>
+<aop-project name="ex06_t"/>
+<aop-project name="ex05"/>
+<aop-project name="ex01"/>
+<aop-project name="ex07"/>
+<aop-project name="ex03_t"/>
+<aop-project name="ex01_t"/>
+<aop-project name="ex05_t"/>
+<aop-project name="ex07_t"/>
+<aop-project name="ex06"/>
+<aop-project name="ex02"/>
+<aop-project name="ex08"/>
+</aop-reference-model>

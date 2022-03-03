@@ -1,0 +1,11 @@
+package spring.calc;
+
+public class ImpeCalculator implements Calculator {
+
+	@Override
+	public long facotorial(long num) { // 재귀 없이 팩토리얼 작성하는 법
+		
+		return 0;
+	}
+	
+}

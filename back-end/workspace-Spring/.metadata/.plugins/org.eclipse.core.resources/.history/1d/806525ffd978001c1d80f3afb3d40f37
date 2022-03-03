@@ -1,0 +1,18 @@
+package spring.aspect;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class ExeTimeAspect { // 공통 기능을 담을 객체
+			// 시간 측정이라는 공통 기능
+	
+	public Object measure(ProceedingJoinPoint joinPoint) throws Throwable{
+		try {
+			Object result = joinPoint.proceed(); // 핵심 기능으로 연결 시켜줄 메서드
+			return result;
+		}finally {
+			
+		}
+		
+	}
+	
+}

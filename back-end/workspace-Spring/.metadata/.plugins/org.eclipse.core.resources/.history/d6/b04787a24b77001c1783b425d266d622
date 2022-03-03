@@ -1,0 +1,5 @@
+package spring.service;
+
+public class ChangePasswordService { // 암호를 변경하기 위한 기능을 담당하는 클래스
+
+}

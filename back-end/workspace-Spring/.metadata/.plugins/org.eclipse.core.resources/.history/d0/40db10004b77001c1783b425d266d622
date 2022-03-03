@@ -1,0 +1,22 @@
+package spring.service;
+
+import spring.dao.MemberDao;
+import spring.exception.AlreadyExistingMemberException;
+import spring.vo.Member;
+import spring.vo.RegisterRequest;
+
+public class MemberRegisterService { // 회원 정보를 저장하기 위한 기능을 담당하는 클래스
+	
+	private MemberDao memberDao = new MemberDao();
+	
+	public void regist(RegisterRequest req) {
+		// 이미 가입된 계정이 있는가?
+		Member member = memberDao.selectByEmail(req.getEmail());
+		if(member !=null) {
+			throw new AlreadyExistingMemberException("이메일 중복 : " + req.getEmail());
+		}
+		Member newMember = new Member(req.getEmail(), req.getConfirmPassword(), req.getName(), new Date());
+		
+		memberDao.insert(newMember);
+	}
+}

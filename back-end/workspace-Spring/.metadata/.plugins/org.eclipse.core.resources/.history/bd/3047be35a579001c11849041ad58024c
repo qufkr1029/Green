@@ -1,0 +1,39 @@
+package spring.main;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import spring.printer.MemberInfoPrinter;
+import spring.printer.MemberListPrinter;
+import spring.service.MemberRegisterService;
+import spring.vo.RegisterRequest;
+
+
+
+public class Main01 {
+
+	public static void main(String[] args) {
+		GenericXmlApplicationContext ctx =
+				new GenericXmlApplicationContext("classpath:appCTX.xml");
+		
+		MemberListPrinter listPrt = ctx.getBean("listPrinter", MemberListPrinter.class);
+		//listPrt.printAll();
+		
+		
+		MemberInfoPrinter infoPrt = ctx.getBean("infoPrinter", MemberInfoPrinter.class);
+		infoPrt.printMemberInfo("lee@naver.com");
+		
+		MemberRegisterService regSvc = ctx.getBean("regSvc",MemberRegisterService.class);
+		
+		insert(regSvc);
+	}
+
+	private static void insert(MemberRegisterService regSvc) {
+		RegisterRequest rr = new RegisterRequest();
+		rr.setEmail(email);
+		rr.setPassword("1234");
+		rr.setName(name);
+		rr.setConfirmPassword(confirmPassword);
+		
+	}
+
+}

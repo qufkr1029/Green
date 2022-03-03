@@ -1,0 +1,14 @@
+package spring.main;
+
+import spring.bean.Client;
+
+public class Main01 {
+
+	public static void main(String[] args) {
+		
+		Client client = new Client();
+		
+		client.send();
+	}
+
+}

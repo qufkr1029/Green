@@ -1,0 +1,11 @@
+package spring.calc;
+
+public class ImpeCalculator implements Calculator {
+
+	@Override
+	public long facotorial(long num) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}
