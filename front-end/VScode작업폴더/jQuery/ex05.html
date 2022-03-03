@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <style>
+        .text-red{
+            color: red;
+        }
+        .center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="test">수고하셨습니다.</h1>
+
+    <script>
+        // class 속성
+        // 기본적으로 속성을 부여할 때 사용하는 메서드 attr
+    //    $('h1').attr('class','text-red'); // h1요소에 class속성에 text-red라는 값을 부여!
+        // attr메서드는 같은 이름의 속성이 이미 있는 경우 속성의 값을 갱신함
+    //    $('h1').removeAttr('class'); // class라는 속성을 제거
+        
+        // class 속성은 다수의 값을 관리할 수 있다.
+        // class 속성만을 위한 메서드
+        //   [추가] class속성에 값을 추가 : addClass();
+        $('h1').addClass('text-red');
+
+        //   [확인] class속성에 값이 있는지 확인 : hasClass()
+        //   => 있다면 true, 없다면 false 
+        let resutl1 = $('h1').hasClass('test');
+        console.log('있는 경우 : ' + resutl1);
+
+        let resutl2 = $('h1').hasClass('ㅋㅋㅋ');
+        console.log('없는 경우 : ' + resutl2);
+
+        //   [제거] class속성에 해당 값만 제거 : removeClass();
+        setTimeout(function(){
+            $('h1').removeClass('text-red');
+        },5000);
+
+        //   [토글] class 속성에 값이 있다면 빼고, 없다면 추가 메서드 : toggleClass();
+        setInterval(function(){
+            $('h1').toggleClass('center');
+        },2000);
+    </script>
+</body>
+</html>

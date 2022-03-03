@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .vbox{
+            display: inline-block;
+            position: absolute;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>박스 옮기기</h2>
+    
+    <script>
+        
+
+        window.onload = function(){
+            let box = document.createElement('div');
+            box.classList.add('vbox');
+            box.innerHTML = "나를 옮겨주세요.";
+
+            document.body.appendChild(box);
+
+            let boxOffsetX, boxOffsetY;
+            
+            box.addEventListener("mousedown", function mdListener(e){ 
+                // 박스를 마우스로 눌렀을 때 이벤트 발생
+                document.addEventListener("mousemove", boxMoveListener , false);
+                boxOffsetX = e.offsetX; // 박스 요소 내부의 마우스 포인터 위치x
+                boxOffsetY = e.offsetY; // 박스 요소 내부의 마우스 포인터 위치x
+            }, false);
+
+            document.addEventListener("mouseup", function muListener(e){
+                // 화면에서 마우스를 땟을 때 이벤트 발생
+                document.removeEventListener("mousemove", boxMoveListener , false);
+            }, false);
+        
+            function boxMoveListener(e){
+                box.style.left = e.pageX - boxOffsetX + "px"; // 빅스의 왼쪽 상단 모서리 좌표 ==============
+                //                  0          0 
+                box.style.top = e.pageY - boxOffsetY + "px";
+                
+                console.log("boxOffsetX : " + boxOffsetX); // 문서 내부의 마우스 포인터 위치 x 
+                console.log("boxOffsetY : " + boxOffsetY); // 문서 내부의 마우스 포인터 위치 x 
+            }
+        
+        }
+
+       
+    </script>
+</body>
+</html>

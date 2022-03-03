@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        아이디 : <input type="text" name="userId" id="userId"><br>
+        비밀번호 : <input type="password" name="userpwd" id="userpwd"><br>
+        <!-- alert confirm prompt와 같은 modal창이라고 하는 대화상자는 상자가 떠있는 동안에 부모 창의 작업이 일시 정지되어 조작할 수 없게 된다.
+        -->
+        <input type="submit" value="로그인" onclick="alert('로그인을 진행합니다.')">
+        <input type="button" value="컨펌버튼" onclick="con()">
+        <input type="button" value="프롬프트버튼" onclick="prom()">
+
+    </form>
+    <script>
+        function con(){
+            let check = confirm('데자와를 좋아하시나요?'); // confirm은??  yes(확인 : true) or no(취소 : false) 둘 중 하나를 입력받을때 confirm을 이용한다.
+            alert(check);
+        }
+        function prom(){
+            let name = prompt('당신의 이름은 무엇인가요?'); // 문자열을 입력받는 대화상자
+            alert(name);
+        }
+    </script>
+</body>
+</html>

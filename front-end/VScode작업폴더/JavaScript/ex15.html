@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //setTimeout(함수, 시간) 정해진 시간(ms)이 흐른후 함수가 한번 실행
+        //setInterval(함수, 시간) 정해진 시간(ms)이 흐른 후 함수가 반복적으로 실행
+
+        function nowTime(){
+            let time = new Date();
+            console.log('현재 시간은 ' + time.toLocaleString() + '입니다.');
+            // console.log('현재 시간은 ' + time + '입니다.');
+        }
+
+        let nowTime2 = function(){
+            let time = new Date();
+            console.log('현재 시간은 ' + time.toLocaleString() + '입니다.');
+        }
+
+        //  setTimeout(nowTime,5000);
+        // setInterval(nowTime, 3000);
+        setInterval(function(){
+            let time = new Date();
+            console.log('현재 시간은 ' + time.toLocaleString() + '입니다.');
+        }, 3000);
+
+    </script>
+</body>
+</html>

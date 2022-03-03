@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>키보드 이벤트 발생</h2>
+    <p id="p"></p>
+    <script>
+        window.onload = function(){
+            document.addEventListener('keydown', pressKeyInfo , false);
+        }
+
+        function pressKeyInfo(e){
+            let p = document.getElementById('p');
+
+            let spKey = ["altKey", "ctrlKey", "shiftKey", "Key", "code", "Keycode"]
+            let str = "";
+
+            for(let i in spKey){
+                str += "<br>" + spKey[i] + " : " + e[spKey[i]];
+            }
+            p.innerHTML = str;
+        }
+    </script>
+</body>
+</html>

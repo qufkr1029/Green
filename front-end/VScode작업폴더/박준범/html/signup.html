@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .box{
+            float: none;
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div><h1>박준범 홈페이지입니다.</h1></div>
+    <div>
+        <form action="main.html" method="post">
+            <div class="box">
+            <fieldset>
+                <legend>필수정보 입력</legend>
+                <label for="userid">아이디 : <input type="text" name="userid" id="userid"  required></label><br>
+                <label for="userpassword">비밀번호 : <input type="password" name="userpassword" id="userpassword" required></label><br>
+                <label for="userpassword">확인비밀번호 : <input type="password" name="userpassword" id="userpassword" required></label><br>
+                <label for="username">이름 : <input type="text" name="username" id="username" required></label><br>
+                <label for="useremail">이메일 : <input type="email" name="useremail" id="useremail" required></label><br>
+                <label for="userphone">전화번호 : <input type="tel" name="userphone" id="userphone" required></label><br>
+            </fieldset>
+            </div>
+            <div class="box1">
+            <fieldset>
+                <legend>추가정보 입력</legend>
+                <label for="userage">나이 : <input type="number" name="userage" id="userage" min="1" max="150"></label><br>
+                성별 : <label><input type="radio" name="gender" id="gender">남</label> <label><input type="radio" name="gender" id="gender" checked>여</label> <br>
+                취미 : <label>
+                       <input type="checkbox" name="hobby" id="hobby" checked>탁구
+                       <input type="checkbox" name="hobby" id="hobby">농구
+                       <input type="checkbox" name="hobby" id="hobby">축구
+                       <input type="checkbox" name="hobby" id="hobby">야구
+                       <input type="checkbox" name="hobby" id="hobby">게임
+                       <input type="checkbox" name="hobby" id="hobby">독서<br>
+                       </label>       
+                <textarea name="introduce" id="introduce" cols="71" rows="10" placeholder="자기소개를 입력하세요"></textarea>
+            </fieldset>
+            </div>
+            <div class="box clear">
+            <input type="submit" value="회원가입">
+            <input type="reset" value="다시작성">
+            </div>
+        </form>
+    </div>
+    <div class="tail"><h2>문서명 : 화면구형 포트폴리오 작성일 : 12/09, 저작권 : copyright@2021 박준범</h2></div>
+</body>
+</html>

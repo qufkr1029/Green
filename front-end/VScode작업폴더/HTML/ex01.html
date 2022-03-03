@@ -1,0 +1,91 @@
+<!-- !+엔터로 html기본 틀을 짬-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="author" content="박준범">
+    <meta name ="description" content="그린 아카데미 예제 1번 문서">
+    <meta name ="keywords" content="grenn, park, academy, 211012">
+    <title>Document</title>
+</head>
+<body>
+    <a href="mailto:qufkr1029@gmail.com">고객문의</a>
+    <a href="tel:+10-1234-5678">고객센터</a>
+    <a href="https://www.google.com" target="_self">구글_self</a>
+    <a href="https://www.google.com" target="_blank">구글_blank</a>
+    <br>
+    <img src="../image/tiger.jpg" alt = "호랑이">
+    <hr>
+    <img src="./img/tiger.jpg" alt = "호랑이">
+
+    <hr>
+    <h4>좋아하는 과일</h4>
+    <ul>
+            <li><a href="https://www.google.com/복숭아">복숭아</a></li>    <!--표준-->
+            <a href="https://www.google.com"><li>딸기</li></a>      <!--비표준-->
+            <li>사과</li>
+    </ul>
+    <hr>
+
+    <h4>정의 리스트 좋은 예제</h4>
+    <!--1. 일반적인 예제-->
+    <dl>
+        <dt>html</dt>
+        <dd>html은 브라우저 해석하기 위한 마크업 언어이다.</dd>
+    </dl>
+    <!--2. 용어에 대한 설명이 여러개인 경우-->
+    <dl>
+        <dt>사과</dt>
+        <dd>1. 과일</dd>
+        <dd>2. 잘못에 대한 용서를 구하는 행위</dd>
+        <dd>3. 미국의 기업을 속되게 이르는 말</dd>
+    </dl>
+    <!--3. 같은 의미의 용어가 2개 이상인 경우-->
+    <dl>
+        <dt>위키백과</dt>
+        <dt>위키피디아</dt>
+        <dd>누구나 자유롭게 사용할 수 있는 다언어판 인터넷 백과사전이다.</dd>
+    </dl>
+    <!--4. 2. , 3. 의 혼합케이스-->
+    <dl>
+        <dt>위키백과</dt>
+        <dt>위키피디아</dt>
+        <dd>누구나 자유롭게 사용할 수 있는 다언어판 인터넷 백과사전이다.</dd>
+        <dd>
+            <a href="https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8">위키백과 사이트</a>
+        </dd>
+    </dl>
+    <!--5. 그룹핑도 가능-->
+    <dl>
+        <div>
+            <dt>체리</dt>
+            <dd>체리는 새콤하다</dd>
+        </div>
+        <div>
+            <dt>감</dt>
+            <dd>감은 떫다</dd>
+        </div>
+    </dl>
+
+    <h4>정의 리스트 좋지 못한 예제</h4>  <!--출력은 된다. 규정에 위반된 문법-->
+    <!--1. dt용어에 대한 설명이 없는 경우-->
+    <dl>
+        <dt>html</dt>
+        <dd>html은 브라우저에서 해석하기 위한 마크업 언어이다.</dd>
+        <dt>css</dt> <!--dt에 대한 dd이 없는 경우-->
+    </dl>
+
+    <!--2. dl태그의 자식요소로 div, dt, dd 이외의 요소가 오는 경우-->
+    <dl>
+        <section>
+            <dt>체리</dt>
+            <dd>체리는 새콤하다.</dd>
+        </section>
+    </dl>
+    <!--3. dt나 dd태그가 직접 오는 경우-->
+    <dt>위키백과</dt>
+
+</body>
+</html>

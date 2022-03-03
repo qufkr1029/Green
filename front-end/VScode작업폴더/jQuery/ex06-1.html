@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        img{
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            height: 200px;
+
+        }
+    </style>
+</head>
+<body>
+    <img src="../image/크리스마스1.jpg" alt="">
+    <img src="../image/크리스마스2.jpg" alt="">
+    <img src="../image/크리스마스3.jpg" alt="">
+    <img src="../image/크리스마스4.jpg" alt="">
+    <img src="../image/크리스마스5.jpg" alt="">
+
+    <script>
+        $(document).ready(function(){
+            setInterval(function(){
+                $('img').first().appendTo($('body'));
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

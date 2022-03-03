@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>입력폼</h3>
+    <form action="#" method="get" enctype="multipart/form-data">      <!--enctype="multipart/form-data" 작성해주어야 파일을 업로드 할 수 있음.-->
+        <fieldset>                  <!-- 라벨을 붙여줘서 인풋타입과 연결시켜줌 아이디를 누르면 인풋타입에 커서가 가게 됨-->
+            <legend>필수 입력사항</legend> <!--legend는 fieldset 안에서 사용 할 수 있음-->
+            <label>아이디 : <input type="text" name="userid" placeholder="아이디를 입력하시오."></label><br>    <!--placeholder를 이용하여 투명하게 글자를 적어냄-->       
+            <label>암호 : <input type="password" name="userpasswold" required></label><br>     <!--required를 이용하여 필수로 값을 적어넣게 함-->
+            <label>이름 : <input type="text" name="username" value="박준범" minlength="2" maxlength="5"></label><br> <!--value로 입력한 값의 글자를 적어냄, readonly로 값을 수정할 수 없게함-->
+            <label>나이 : <input type="number" name="userage" min="15" max="130"></label> <!--max,min // maxlength,minlength 차이 알아두기-->
+            <label>신발 사이즈 : <input type="number" name="usershoes" min="100" max="500" step="5"></label> <!--step으로 범위 지정 가능-->
+            <label>체중 : <input type="number" name="userweight" min="10" max="500" step="0.01"></label>
+            <br>
+            <input type="hidden" name="hiddenCard" value="ㅋㅋㅋㅋ">
+
+            <h4>좋아하는 영화를 선택하세요</h4>
+            <label><input type="checkbox" name="movie" value="spiderman" checked>스파이더맨</label> <!--checked로 미리 체크되어 있게 함-->
+            <label><input type="checkbox" name="movie" value="blackwidow">블랙위도우</label>
+            <label><input type="checkbox" name="movie" value="ironman">아이언맨</label>
+            <label><input type="checkbox" name="movie" value="antmand">앤트맨</label><br>
+           
+            <h4>성별</h4>
+            <label><input type="radio" name="gender" value="male">남</label>
+            <label><input type="radio" name="gender" value="female" checked>여</label><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>선택 입력사항</legend>
+            <h4>수강하고자 하는 과목을 선택하세요.</h4>
+            <select name="subject" multiple>        <!--select로 내가 고른 value가 name에 얹혀 서버에 보내짐, multiple로 여러개 고를 수 있게 함--> 
+                <option value="java">JAVA</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript" selected>JAVASCRIPT</option> <!--selected로 미리 선택되어 있게 함-->
+                <option value="oracle">ORACLE</option>
+            </select><br>
+            <h4>하고 싶은 말</h4>
+            <textarea name="feedback" cols="50" rows="5">반갑습니다.</textarea><br>
+        </fieldset>
+
+        <fieldset>
+        <legend>추가입력사항</legend>
+            <label for="useremail">이메일 :</label>
+            <input type="email" name="useremail" id="useremail">
+            <br>
+            <label for="">전화번호 :</label>
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"> <!--[0-9]{3}-[0-9]{4}-[0-9]{4}이런 형태의 값이 아니면 에러가 난다.-->
+            <br>
+            <label for="usercolor">좋아하는 색상 :</label>
+            <input type="color" name="usercolor" id="usercolor">
+            <br>
+            <label for="userbirthDay">생년월일 : </label>
+            <input type="date" name="userbirthDay" id="userbirthDay">
+            <br>
+            <label for="visittime">방문일시 : </label>
+            <input type="datetime-local" name="visittime" id="visittime">
+            <br>
+            <label for="range">범위 : </label>
+            <input type="range" name="range" id="range" min="1" max="100" step="5">
+            <br>
+            <label for="file">업로드 : </label>
+            <input type="file" name="file" id="file" accept="image/*, audio/*, video/*">
+            <br>
+        </fieldset>
+
+        <input type="submit" value="확인">
+        <input type="reset" value="다시쓰기">
+        <input type="button" value="누르지마시오">
+    </form>
+</body>
+</html>

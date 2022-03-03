@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<h3>구구단 출력</h3>");
+        document.write("<hr>");
+        document.write("<h5>1단계 2단을 출력해 봅시다.</h5>");
+
+        document.write("2 x 1 = 2<br>");
+        document.write("2 x 2 = 4<br>");
+        document.write("2 x 3 = 6<br>");
+        document.write("2 x 4 = 8<br>");
+        document.write("2 x 5 = 10<br>");
+        document.write("2 x 6 = 12<br>");
+        document.write("2 x 7 = 14<br>");
+        document.write("2 x 8 = 16<br>");
+        document.write("2 x 9 = 18<br>");
+
+        document.write("<hr>");
+        document.write("<h5>2단계 반복을 이용해서 2단을 출력해 봅시다.</h5>");
+
+        for(let i = 1; i<10 ; i++){
+            document.write("2 x " + i + " = " + (2*i) + "<br>");
+        }
+
+        document.write("<hr>");
+        document.write("<h5>3단계 2단계를 이용해서 1~9단을 출력해 봅시다.</h5>");
+
+         document.write("********1단******<br>");
+        for(let i = 1; i<10 ; i++){
+           
+            document.write("1 x " + i + " = " + (1*i) + "<br>");
+        }   
+         document.write("********2단******<br>");
+        for(let i = 1; i<10 ; i++){
+           
+            document.write("2 x " + i + " = " + (2*i) + "<br>");
+        }   
+         document.write("********3단******<br>");
+        for(let i = 1; i<10 ; i++){
+           
+            document.write("3 x " + i + " = " + (3*i) + "<br>");
+        }   
+        document.write("********4단******<br>");
+        for(let i = 1; i<10 ; i++){
+            
+            document.write("4 x " + i + " = " + (4*i) + "<br>");
+        }   
+        document.write("********5단******<br>");
+        for(let i = 1; i<10 ; i++){
+            
+            document.write("5 x " + i + " = " + (5*i) + "<br>");
+        }   
+        document.write("********6단******<br>");
+        for(let i = 1; i<10 ; i++){
+            
+            document.write("6 x " + i + " = " + (6*i) + "<br>");
+        }   
+        document.write("********7단******<br>");
+        for(let i = 1; i<10 ; i++){
+            
+            document.write("7 x " + i + " = " + (7*i) + "<br>");
+        }   
+        document.write("********8단******<br>");
+        for(let i = 1; i<10 ; i++){
+            
+            document.write("8 x " + i + " = " + (8*i) + "<br>");
+        }   
+        document.write("********9단******<br>");
+        for(let i = 1; i<10 ; i++){
+            
+            document.write("9 x " + i + " = " + (9*i) + "<br>");
+        }
+
+        document.write("<hr>");
+        document.write("<h5>4단계 반복해서 1~9단을 출력해 봅시다.</h5>");
+
+        for(let j = 1; j<10 ; j++){
+            document.write("********"+j+"단******<br>");
+            for(let i = 1; i<10 ; i++){
+                document.write(j+" x " + i + " = " + (j*i) + "<br>");
+            }
+        }
+        
+    </script>
+</body>
+</html>

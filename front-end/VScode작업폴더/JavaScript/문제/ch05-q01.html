@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="gameStart()">게임 시작</button>
+    <script>
+        //1번 문제 : 0~9까지의 숫자로 이루어진 3자리 숫자를 만들어서 배열에 저장하는 함수를 만들어보세요.(숫자의 중복 제거)
+        //              숫자의 중복 제거
+        function selectNumber3(){
+            let game = []; //빈배열 준비
+            
+            for(let i = 0; i < 3; i++){
+                let num = Math.floor(Math.random()*9); //0~9 까지의 임의의 수 생성
+                game.push(num);  // game 에 num을 넣어줌
+                for(let j = 0; j < i ;j++){ //i - 1 번째 까지 비교
+                    if(game[i] == game[j]){
+                        game.length--; //중복이 발견된 마지막 저장 숫자를 제거
+                        i--; // 마지막 회차를 복구시켜 다시진행
+                        break; //중복이 발견되었으니 반복문 빠져나감
+                    }
+                }
+            }
+            return game;
+        }
+        
+        function gameStart(){
+            let game = selectNumber3();
+            document.write("["+game[0]+":"+game[1]+":"+game[2]+"]");
+        }
+        
+
+    </script>
+</body>
+</html>

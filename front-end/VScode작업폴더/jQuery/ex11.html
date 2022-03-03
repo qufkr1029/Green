@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이펙트효과</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <style>
+        .page{
+            border: solid black 1px;
+            background-color: lavender;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="showBtn">나타내기</button>
+    <button type="button" id="hideBtn">사라지기</button>
+    <button type="button" id="toggleBtn">토글</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing</h1>
+        <p> Saepe, adipisci corporis. Ullam laboriosam architecto </p>
+    </div>
+    <script>
+        // 이펙트 : 제이쿼리가 제공하는 시각효과를 보여주는 함수
+        
+        // 기본적으로 제공되는 동작 3가지
+
+        // 1. 문서객체의 확대 축소 : show(), hide(), toggle()
+        // 2. 슬라이드 효과       : slidedown(), slideup(), slidetoggle()
+        // 3. 페이드 효과         : fadein(), fadeout(), fadetoggle()
+
+        // 보여주기와 사라지기 기능 두가지를 가진다.
+        // 보여주기와 사라지기가 번갈아 발생하는 toggle()
+
+        // 기본 제공 메서드 9가지
+
+        // 각각의 함수는 매개값을 3가지 받는다.
+        // 1) 진행 속도 : slow, nomal, fast, 밀리초
+        // 2) 전환 효과 => CSS easing
+        // 3) 함수 => 이펙트가 진행된 후 작동될 함수
+
+        // $('button#showBtn').click(function(){
+        //     $('div.page').show(5000);
+        // });
+        // $('button#hideBtn').click(function(){
+        //     $('div.page').hide(5000);
+        // });
+        // $('button#toggleBtn').click(function(){
+        //     $('div.page').toggle(5000);
+        // });
+
+        // $('button#showBtn').click(function(){
+        //     $('div.page').fadeIn(5000);
+        // });
+        // $('button#hideBtn').click(function(){
+        //     $('div.page').fadeOut(5000);
+        // });
+        // $('button#toggleBtn').click(function(){
+        //     $('div.page').fadeToggle(5000);
+        // });
+
+        $('button#showBtn').on('mouseenter', function(){
+            $('div.page').slideDown(1000);
+        });
+        $('button#hideBtn').on('mouseenter', function(){
+            $('div.page').slideUp(1000);
+        });
+        $('button#toggleBtn').on('mouseenter', function(){
+            $('div.page').slideToggle(1000);
+        });
+    </script>
+</body>
+</html>

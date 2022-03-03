@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력요소</title>
+    
+</head>
+<body>
+   <h2>입력 요소</h2> 
+   <form action="#" name="form1" id="form2">
+        아이디 : <input type="text" name="userid1" id="userid2"><br> <!-- name 'a' | 값 : 'b' => [a:b] -->
+        비밀번호 : <input type="password" name="userpwd" id="userpwd"><br>
+        이름 : <input type="text" name="username" id="username"><br>
+        성별 : <input type="radio" name="gender" id="genderM" value="male">남
+              <input type="radio" name="gender" id="genderF" value="female">여<br>
+        취미 : <input type="checkbox" name="hobby" id="reading" value="reading">독서
+              <input type="checkbox" name="hobby" id="watchMovie" value="watchMovie">영화감상
+              <input type="checkbox" name="hobby" id="pingpong" value="pingpong">탁구
+              <input type="checkbox" name="hobby" id="shopping" value="shopping">쇼핑
+              <input type="checkbox" name="hobby" id="game" value="game">게임 <br>
+        직업 : <select name="job" id="job">
+                <option value="front" id="front">프론트개발자</option>
+                <option value="back" id="back">백엔드개발자</option>
+                <option value="full" id="full">풀스택개발자</option>
+              </select><br>
+        하고 싶은 말 : <br>
+        <textarea name="word" id="word" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="확인">
+        <input type="button" value="자바스크립트제어" onclick="controlForm()">
+        <input type="button" value="폼제어" onclick="controlForm2()">
+   </form>
+   <script>
+       function controlForm2(){
+           //폼태그 만의 값을 읽어오는 방법
+           //일반적인 폼 요소 읽어오기
+           let frm1 = document.getElementById('form2');
+           console.log(frm1);
+           let frm2 = document.getElementsByTagName('form')[0];
+           console.log(frm2);
+
+           //폼태그만의 요소 읽어오기
+           let frm3 = document.forms.form2;  //폼태그의 id로 가져오기
+           console.log(frm3);
+           let frm4 = document.forms.form1;  //폼태그의 name로 가져오기
+           console.log(frm4);
+
+           //폼태그만의 폼요소의 자식 요소 읽어오기
+            let id1 = document.forms.form1.userid2; //폼태그의 자식요소의 id로 가져오기
+            console.log(id1);
+
+             //폼태그만의 폼요소의 자식 요소 읽어오기
+            let id2 = document.forms.form1.userid1; //폼태그의 자식요소의 id로 가져오기
+            console.log(name);
+
+       }
+
+       function controlForm(){
+           let id = document.getElementById('userid');
+           console.log(id.value); // input태그에 있는 것은 .value로 가져온다
+
+           let pwd = document.getElementById('userpwd');
+           console.log(pwd.value);
+
+           //자바스크립트로 라디오, 체크박스 버튼을 체크하고 싶다.
+           let genderM = document.getElementById('genderM');
+           //console.log(genderM.value);
+           genderM.checked = true;
+
+           let watchMovie = document.getElementById('watchMovie');
+           watchMovie.checked = true;
+
+           let full = document.getElementById('full');
+           full.selected = true;
+
+           //텍스트 영역에서 값을 읽어올때
+           let word = document.getElementById('word');
+           console.log(word.value);
+       }
+   </script>
+</body>
+</html>

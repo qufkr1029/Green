@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            background-color: white;
+            color: black;
+        }
+        .black{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body id="change">
+    <h2 id="title">DOM이란</h2>
+    <p><strong>Document Object Model Object</strong>의 줄임말입니다.</p>
+    <button type="button" onclick="info()">노드 정보 찍기</button><br>
+    <input type="text" id="userpassword"><br>
+    <button type="button" onclick="hidePwd()">암호 숨기기</button>
+    <h2>BOM이란</h2>
+    <h2>EVENT란</h2>
+    <button type="button" onclick="changeBg()">모드변경</button>
+    <p id="greeting">안녕하세요</p>
+    <button type="button" onclick="changeGreeting()">인삿말변경</button>
+
+    <script>
+        function changeGreeting(){
+            let greet = document.getElementById('greeting');
+            console.log(greet);
+            // greet.innerHTML = "자바스크립트는 <strong>너무</strong> 어려워요!";
+            // innerHTML은 안에 태그를 인식함
+            greet.innerText = "자바스크립트는 <strong>너무</strong> 어려워요!";
+            // innerText는 안에 태그를 텍스트로 처리함.
+        }
+
+        function changeBg(){
+            // let body = document.getElementById('change'); // 도큐먼트안에 id값이 change라는 태그를 바디에 불러옴
+            // if(body.hasAttribute('class')){
+            //     if(body.getAttribute('class' )== 'white'){
+            //         body.setAttribute('class', 'black')
+            //     }else if(body.getAttribute('class' )== 'black'){
+            //         body.setAttribute('class', 'white')
+            //     }
+            // }else{
+            //     body.setAttribute('class', 'black')
+            // }
+            
+            body.classList.toggle('black');
+        }
+
+        function hidePwd(){
+            let p = document.getElementById('userpassword');
+            // console.log(p.type);
+            // p.type = 'password';
+            // console.log(p.type);
+            let att = p.getAttribute('type');
+            console.log(att);
+            p.setAttribute('type', 'password');
+            console.log(att);
+        }
+        function info(){
+            let a = document.getElementById('title');
+            console.log(a.innerHTML);
+            a.innerHTML = "여러분 고생하셨습니다."; // 텍스트를 가르키는 프로퍼티
+            console.log(a);
+
+            let b = document.getElementsByTagName('h2');
+            console.log(b);
+            b[0].innerHTML = "두 번째 변경입니다.";
+            b[1].innerHTML = "두 번째 노드입니다.";
+            b[2].innerHTML = "세 번째 노드입니다.";
+        }
+        
+    </script>
+</body>
+</html>

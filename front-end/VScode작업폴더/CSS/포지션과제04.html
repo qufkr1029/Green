@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .float1{
+        float: left;
+    }
+    .bigbox1{
+        
+        width: 850px;
+        height: auto;
+        padding: 30px 0px;
+        border-color: rgba(233, 227, 227, 0.185) ;
+        border-bottom: solid;
+        border-width: 1px;
+    }
+    .bigbox2{
+        
+        width: 850px;
+        height: auto;
+        padding: 30px 0px;
+    }
+    .bigbox3{
+        
+        width: 850px;
+        height: auto;
+        padding: 30px 0px;
+        border-color: gray ;
+        border-top: solid;
+        border-width: 1px;
+    }
+    .imageRp{
+        width: 250px;
+        height: 150px;
+        padding-right: 20px;
+    }
+    .parent{
+        /*플렉스 박스 형태*/
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        /*정렬방식 Main-Asix*/
+        justify-content: space-between;
+        /*정렬방식 Cross-Asix*/
+        align-items: center;
+    }
+    .son{
+        
+        width: 152px;
+        height: 330px;        
+    }
+    .movimg{
+        width: 150px;
+        height: 200px;
+    }
+    .bold{
+        font-size: 1.08em;
+        font-weight: bold;
+    }
+    .text1{
+        line-height: 24px;
+    }
+    .bluetext{
+        color: blue;
+    }
+    .graytext{
+        color: gray;
+    }
+    .sfontsize{
+        font-size: 0.9em;
+    }
+    #movie2{
+        text-decoration: underline;
+    }
+    .설명부모{
+        padding-top: 10px;
+    }
+</style>
+<body>
+    <div class="bigbox1">
+        <div class="float1"><img src="이미지1.bmp" alt="안젤리나졸리" class="imageRp"></div>
+        <div class="text1"><p class="bluetext bold">영화</p>
+             <p class="bold">80년대부터 완성형 미모 자랑하던 이 배우의 근황</p>
+             <p >안젤리나 졸리가 돌아왔습니다. 이달 초 개봉한 &lt;내가 죽기를 바라는 자들&gt; 은 과거 화재 현장에서
+                아이를 구하지 못한 죄책감에 시달려온 소방대원 한나(안젤리나 졸리)가 킬러...</p>
+             <p>씨네플레이 <span class="graytext">-2일 전</span></p>
+        </div>
+    </div>
+    <div class="bigbox2">
+        <div><span class="bold">일간 박스오피스</span> &nbsp; <span class="graytext sfontsize">2021.05.16 누적 관객수</span></div>
+        <br>
+        <div class="parent">
+            <div class="son">
+                <div>
+                    <div><img src="영화1.bmp" class="movimg"></div>
+                </div>
+                <div>
+                    <div class="bold">1 스파이럴</div>
+                    <div class="설명부모 graytext sfontsize">
+                        <div class="설명">개봉 2021.02.12.</div>
+                        <div class="설명">일간 23,585명</div>
+                        <div class="설명">누적 86,545명</div>
+                    </div>
+                </div>
+            </div>
+            <div class="son">
+                <div>
+                    <div><img src="영화2.bmp" class="movimg"></div>
+                </div>
+                <div>
+                    <div class="bold" id="movie2">2 크루즈 패밀리:뉴에이지</div>
+                    <div class="설명부모 graytext sfontsize">
+                        <div class="설명">개봉 2021.05.05.</div>
+                        <div class="설명">일간 16,306명</div>
+                        <div class="설명">누적 206,684명</div>
+                    </div>
+                </div>
+            </div>
+            <div class="son">
+                <div>
+                    <div><img src="영화3.bmp" class="movimg"></div>
+                </div>
+                <div>
+                    <div class="bold">3 더 스파이</div>
+                    <div class="설명부모 graytext sfontsize">
+                        <div class="설명">개봉 21.04.28.</div>
+                        <div class="설명">일간 14,681명</div>
+                        <div class="설명">누적 283,086명</div>
+                    </div>
+                </div>
+            </div>
+            <div class="son">
+                <div>
+                    <div><img src="영화4.bmp" class="movimg"></div>
+                </div>
+                <div>
+                    <div class="bold">4 극장판 귀명의 칼날: 무한일지편</div>
+                    <div class="설명부모 graytext sfontsize">
+                        <div class="설명">개봉 2021.01.27.</div>
+                        <div class="설명">일간 11,797명</div>
+                        <div class="설명">누적 2,004,206명</div>
+                    </div>
+                </div>
+            </div>
+            <div class="son"> 
+                <div>
+                    <div><img src="영화5.bmp" class="movimg"></div>
+                </div>
+                <div>
+                    <div class="bold">5 비와 당신의 이야기</div>
+                    <div class="설명부모 graytext sfontsize">
+                        <div class="설명">개봉 2021.04.28.</div>
+                        <div class="설명">일간 10,551명</div>
+                        <div class="설명">누적 346,895명</div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="bigbox3">
+        <div class="float1"><img src="이미지2.bmp" alt="류준열" class="imageRp"></div>
+        <div class="text1"><p class="bluetext bold">영화</p>
+             <p class="bold">긴 시간 장발 유지했던 류준열이 머리 자른 이유</p>
+             <p>&lt;봉오동 전투&gt;(2019) 이후 드라마/영화 작품에서 얼굴을 볼 수 없었던 배우 류준열. 꾸준히
+                작품 촬영 소식이 들려오긴 했지만. 그의 근황을 궁금해하는 팬들이 많았는데요. 얼마...</p>
+             <p>씨네플레이 <span class="graytext" >-2일 전</span></p>
+        </div>
+    </div>
+</body>
+</html>

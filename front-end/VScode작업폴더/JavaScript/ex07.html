@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새로운 노드 생성</title>
+</head>
+<body>
+    <div id="parent"></div>
+    <button type="button" onclick="addNode()">노드추가</button>
+    <script>
+        function addNode(){
+            let p = document.createElement('p'); //요소를 만들어라 무슨 요소? p 요소를
+            p.innerHTML = "안녕하세요";
+            
+            let div = document.getElementById('parent'); //script에서 div를 사용하기 위해 읽어옴
+
+            div.appendChild(p); // div 요소의 마지막 자식요소로 p를 삽입
+        }
+    </script>
+
+</body>
+</html>

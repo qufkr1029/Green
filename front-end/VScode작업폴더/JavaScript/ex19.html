@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            background-color: azure;
+            color: darkblue;
+        }
+        .black{
+            background-color: darkblue;
+            color:azure;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="ClickMe!" onclick="displayTime()">
+    <input type="button" value="ClickMe!!!" id='displayTime'>
+    <input type="button" value="ClickMe!!!!!" id='displayTimeListener'>
+    <p id="p">색이 변합니다.</p>
+    <input type="button" value="이벤트 제거" onclick="removeE()">
+
+    <script>
+        function displayTime(){
+            let time = new Date();
+            alert('현재 시간은 ' + time.toLocaleString() + '입니다.');
+        }
+        
+        window.onload = function(){
+            let btn = document.getElementById('displayTime');
+            btn.onclick = displayTime;   //요소의 프로퍼티로 이벤트함수 등록
+        }
+        
+        // 요소의 프로퍼티로 이벤트를 등록한 경우
+        // 이벤트를 삭제할 수도 있다.
+        // ex) btn.onclick = null;
+
+        window.onload = function(){
+            // 이벤트 리스너 등록
+            let btn = document.getElementById('displayTimeListener');
+
+            // 리스너 등록 방법
+            //btn.addEventListener(이벤트유형(on을 제거하고 작성), 콜백함수, 이벤트단계);
+            btn.addEventListener('click', function(e){
+                let time = new Date();
+            alert('현재 시간은 ' + time.toLocaleString() + '입니다.');
+            }, false);
+
+            // 함수의 일반적인 사용방법 : 이름을 호출 : 이름();
+            // 이름호출 없이 이벤트로만 동작하는 함수 : 콜백 함수
+            // function(e){
+            //          e : 발생한 이벤트 객체를 의미
+            //          e.currentTarget() 이벤트가 발생한 요소를 의미
+            // }
+
+            // 리스너를 제거할 때
+            // target.removeEventListener() 같은 이름의 콜백함수를 가진 이벤트를 제거한다.
+            // 이름이 없는 함수의 이벤트는 제거할 수 없다.
+            let p = document.getElementById('p');
+            p.addEventListener('click',bgColorEvent,false);
+        }
+                
+        function bgColorEvent(e){
+            e.currentTarget.classList.toggle('black');
+        }
+
+        function removeE(){
+            let p = document.getElementById('p');
+            p.removeEventListener('click',bgColorEvent,false); //p요소에 붙은 이벤트를 제거
+        }
+        
+    </script>
+</body>
+</html>

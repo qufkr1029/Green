@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 6) 업다운 게임
+        
+        alert("업다운 게임을 시작합니다.");        
+        
+        let gamenum = Math.floor((Math.random()*100)+1);
+        // document.write(num);
+        // console.log(num)
+        let cnt = 0;
+        let run = true;        
+        while(run){
+            let inputNum = parseInt(prompt("업다운 게임 시작 1부터 100사이의 정수의 값을 맞춰보세요."));
+            cnt ++;
+            if(inputNum == gamenum){
+                alert("맞췄습니다.\n정답 : " + gamenum + "\n" + cnt + "번째 성공입니다.");
+                // alert( cnt + " 번째 성공입니다.");
+                run = 0;
+            }else if(inputNum < gamenum){
+                alert("입력하신 숫자보다 Up(👍) 입니다.");
+            }else if(inputNum > gamenum){
+                alert("입력하신 숫자보다 Down(👎) 입니다.");
+            }else if(inputNum > 100 || inputNum < 0){
+                alert("숫자를 잘못 입력했습니다. \n 다시 확인해 주세요.");
+            }
+        }
+
+    </script>
+</body>
+</html>

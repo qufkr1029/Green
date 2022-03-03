@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+    </style>
+</head>
+<body>
+    <button type="button" onclick="changeColor()">색 바꾸기</button>
+    <script>
+        let bgColor = ['red','orange','yellow','green','blue','navy','purple','black','white','aquamarine','crimson','gold','hotpink','skyblue'];
+        function changeColor(){
+            let colorNumber = Math.floor(Math.random()*bgColor.length);
+            
+            alert("현재의 배경색은 " + bgColor[colorNumber] + " 입니다.");
+            document.body.style.backgroundColor = bgColor[colorNumber]; // body 태그의 바탕색 변경
+        }
+    
+    
+    
+    </script>
+</body>
+</html>

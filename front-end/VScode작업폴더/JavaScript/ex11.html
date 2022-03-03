@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            color: crimson;
+        }
+        .b{
+            background-color: cyan;
+        }
+        .c{
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <p class="">(1) Hello World!!!</p>
+    <p class="a">(2-a) Hello World!!!</p>
+    <p class="b">(3-b) Hello World!!!</p>
+    <p class="c">(4-c) Hello World!!!</p>
+    <p class="a b">(5-a,b) Hello World!!!</p>
+    <p class="b c">(6-b,c) Hello World!!!</p>
+    <p class="a c">(7-a,c) Hello World!!!</p>
+    <p class="a b c">(8-a,b,c) Hello World!!!</p>
+    <p class="" id="test" onclick="test()">(9) Hello World!!!</p>
+    <script>
+        function test(){
+            let p = document.getElementById('test');
+            // p.setAttribute('class', 'b'); //기존의 속성의 값을 부여하는 방법
+            // p.setAttribute('class', 'c'); //기존에 있던 b가 지워지고 c가 적용이 됨 (기존에 있던 값을 지우고 설정이 됌)
+
+            //그래서 나온 개념이 classList => 클래스 속성을 관리하는 방법
+            console.log(p.classList);
+
+            p.classList.add('b'); //각각 추가가 된다.
+            p.classList.add('c'); //각각 추가가 된다.
+            p.classList.add('a'); //각각 추가가 된다.
+            p.classList.remove('a');
+            
+            
+        }
+    </script>
+</body>
+</html>

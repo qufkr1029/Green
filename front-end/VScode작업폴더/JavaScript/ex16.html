@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>화면에 동적으로 기록하기</h2>
+    <p id="p">안녕하세요</p>
+    <input type="button" value="Document.write" onclick="writeDocument()">
+    <input type="button" value="innerHTML.write1" onclick="innerDocument1()">
+    <input type="button" value="innerHTML.write2" onclick="innerDocument2()">
+
+    <script>
+        function writeDocument(){
+            document.write('<p>버튼으로 문서 작성하기</p>');
+        }
+        function innerDocument1(){
+            let p = document.getElementById('p');
+            p.innerHTML += '<br>반갑습니다.';
+        }
+        function innerDocument2(){
+            let p2 = document.getElementById('p');
+            p2.innerHTML = '반갑습니다.';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <style>
+        
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+            position: relative;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="page"></div>
+
+    <script>
+        // 사용자 정의 애니메이션 : animate()
+        // 매개값 1(필수) : 대상요소의 변환을 표기(객체)
+        //      위치변환 : top, left, right, bottom
+        //      크기변환 : width, height
+        //      모양변환 : margin, padding
+        //      투명도 : opacity
+        //          절대적변환, 상대적변환
+
+        // 매개값 2(필수) : 변화 시간 : slow, normal, fast, 밀리초
+        // 매개값 3 : 변환 효과 : linear, swing...
+        // 매개값 4 : 함수 : 애니메이션이 동작된 후 작동할 함수
+
+        // $('div.page').click(function(){
+        //     $(this).animate({
+        //         top:'+=100',
+        //         width:'+=100'
+        //     }, 2000);
+        // });
+
+        // 애니메이션 기능은 연속해서 실행 가능
+        // $('div.page').click(function(){
+        //     $(this).animate({
+        //         left:'+=500'
+        //     }, 2000).animate({
+        //         top:'+=500'
+        //     }, 2000).animate({
+        //         left:'-=500'
+        //     },2000).animate({
+        //         top:'-=500'
+        //     },2000);
+        // });
+
+
+        // $('div.page').click(function(){
+        //     // $(this).clearQueue();
+        //     $(this).stop(false, false);
+        //     $(this).animate({
+        //          left:'+=200'
+        //     }, 10000).animate({
+        //         top:'+=200'
+        //     }, 10000);
+        // });
+
+        // 애니메이션은 연속 실행시 대기열에 들어가서 순서대로 진행된다. => 큐
+
+        // 사용자가 느끼는 시간과 애니메이션이 진행되는 시간에 괴리로 인해서 이벤트를 연달아 발생시키는 상황이 발생한다.
+    
+        //  애니메이션 대기열을 제거하는 함수 : clearQueue();
+        //                  마지막 애니메이션 큐를 남기고 제거
+
+        // 애니메이션 자체를 중단시키는 stop();
+        // 매개값 1 : clearQueue()를 동작시킬것인가(true), 말것인가(false)
+        // 매개값 2 : 애니메이션 중단후 현재 위치를 어디에 둘것인가?
+        //              true : 최종 위치로 지정
+        //              false : 현재 중단 위치로 지정
+
+        // 애니메이션이 연달아 있는 경우 애니메이션 사이에 시간간격 주는 함수 delay(밀리초)
+        $('div.page').click(function(event){
+            $(this).animate({
+                 left:'+=200'
+            }, 5000).delay(2000).animate({
+                top:'+=200'
+            }, 5000);
+        });
+
+
+    </script>
+</body>
+</html>

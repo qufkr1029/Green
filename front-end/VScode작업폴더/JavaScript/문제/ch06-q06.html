@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        img{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .line{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>투 두 리스트</h1>
+    <button type="button" onclick="createTodo()" value="할일추가">할일추가</button>
+    <ul id="toDoList">
+        <!-- <li>
+            <input type="checkbox" onchange="line(this)">
+            <span class> 첫번째 할일</span>
+            <img src="../../image/xxx.jpg" onclick="delList(this)">
+        </li>
+        <li>
+            <input type="checkbox" onchange="line(this)">
+            <span class = "line"> 두번째 할일</span>
+            <img src ="../../image/xxx.jpg" onclick="delList()">
+        </li>
+        <li>
+            <input type="checkbox" onchange="line(this)">
+            <span class> 세번째 할일</span>
+            <img src="../../image/xxx.jpg" onclick="delList()">
+        </li> -->
+    </ul>
+</body>
+<script>
+    function createTodo(){
+        // let addWord = prompt('추가 할 일을 기록하세요');
+
+        // let ul = document.createElement('ul'); // <ul></ul>
+        // let li = document.createElement('li'); // <li></li>
+        // let chk = document.createElement('input'); // <input>
+        // let span = document.createElement('span'); // <span></span>
+
+        // li.innerHTML = addWord;
+        // document.body.ul.appendChild(li);
+
+
+        let ul = document.getElementById('toDoList'); // <ul></ul> 를 배열에 착착착
+
+        let toDo = prompt('할 일을 입력해주세요');
+
+        // input => type="checkbox" onchange="line(this)"
+        input.setAttribute('type', 'checkbox');
+        input.setAttribute('onchange', 'line(this)');  // input => type="checkbox" onchange="line(this)"
+       
+
+        // span  =>  할 일 목록
+        span.innerHTML = toDo; // <span class> 할 일 목록</span>
+        
+
+        // img  =>  src="../../image/xxx.jpg" onclick="delList(this)"
+        img.setAttribute('src', '../../image/xxx.jpg');
+        img.setAttribute('onclick', 'delList(this)'); // <img src="../../image/xxx.jpg" onclick="delList(this)">
+        
+
+
+
+        let li = document.createElement('li'); //<li></li> 를 생성 (아직화면상에없음)
+        let input = document.createElement('input'); // <input> 를 생성 (아직화면상에없음)
+        let span = document.createElement('span'); // <span></span> 를 생성 (아직화면상에없음)
+        let img = document.createElement('img'); // <img> 를 생성 (아직화면상에없음)
+
+        li.appendChild(input); //<li><input></li>
+        li.appendChild(span); //<li><input><span></span></li>
+        li.appendChild(img); //<li><input><span></span><img></li>
+
+        ul.appendChild(li);  // <ul>  <li>qwe123</li>  </ul>
+    }
+
+    function line(obj){
+        console.log("넘어온 this의 정체 : " + obj); //input태그 요소
+        //obj => input => type="checkbox
+        
+        //제어해야할 요소는 누구? => span
+
+        obj.nextSibling; // span
+
+    
+
+    }
+
+
+</script>
+</html>

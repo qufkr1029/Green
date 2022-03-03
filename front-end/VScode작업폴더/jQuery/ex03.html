@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>안녕하세요0</h1>
+    <h1>안녕하세요1</h1>
+    <h1>안녕하세요2</h1>
+    <script>
+        // 선택된 문서객체에 효과(기능)를 적용하는 방법 - 제이쿼리가 제공하는 메서드
+        // 메서드의 기본 사용방법 => 속성값을 부여하거나 읽어올 때 사용하는 메서드
+        //                                  setter    getter
+
+        // 1) setter 기능 : 값을 지정(입력)할 때 사용(=> 반환값: jquery객체 => 메서드 체이닝)
+        // 값을 지정하는 방법
+        //  1) (문자열1, 문자열2)   문자열1 이라는 속성에 문자열2 라는 값을 지정
+    //     $('h1').css('color', 'blue');
+        // 예외
+        $('h1').html('반갑습니다.');
+
+        //  2) (객체)
+        // $('h1').css('color', 'red')
+        //        .css('backgroundColor', 'orange')
+        //        .css('textAlign','center');
+
+        $('h1').css({ // .css({x:1,y:2,z:3})
+            'color':'red',
+            'backgroundColor':'orange',
+            'textAlign':'center'
+        });
+        // css 값을 정할 때 이름을 붙여 사용해도 되고 -를 사용해도 된다.
+        // background-color == backgroundColor
+        // 다만 이름을 문자열이 아닌 값으로 사용하는 경우 자바스크립트 문법에 따른다.
+        // backgroundColor
+        // $('h1').css({ // .css({x:1,y:2,z:3})
+        //     color:'red',
+        //     background-color:'orange', // 이렇게 하면 오류
+        //     textAlign:'center'
+        // });
+
+        //  3) (함수) : 반환값이 있는 함수
+        // $('h1').css('color', function(){
+        //     return
+        // })
+        
+        let arr = ['red','blue','green'];
+        $('h1').css('color', function(index){
+             return arr[index];
+        });
+
+        //  4) 객체와 함수의 콜라보
+        let bgColor = ['pink','aqua','lightgreen'];
+        $('h1').css({
+            color:function(index){
+                return arr[index];
+            },
+            backgroundColor:function(index){
+                return bgColor[index];
+            }
+        });
+
+        // 2) getter 기능 : 저장된 값을 읽어올 때 사용
+        // 기본적으로 setter하고 유사하다. but 매개값을 하나만 받는다. (=> 반환값: 문자열)
+        let colorValue = $('h1').css('color'); //  문서객체가 여러개인경우 첫번째 것만 반환
+        alert(colorValue);
+
+        let readColor = [];
+        $('h1').each(function(index, item){   // 여러개의 문서객체에 속성값을 읽어오기
+            readColor.push($(item).css('color'));
+        });
+        console.log('색깔 배열 : ' + readColor);
+    </script>
+</body>
+</html>

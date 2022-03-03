@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+        body{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h1{
+            font-family: 'Fuzzy Bubbles', cursive;
+            font-size: 50px;
+            text-align: center;
+            text-shadow: 4px 4px gray;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        .park{
+            color: blue;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        ol li{
+            list-style: upper-roman ;
+        }
+        ul li{
+            width: 100px;
+            list-style: square ;
+        }
+        .html{
+            color: blueviolet;
+            background-color: plum;
+        }
+        .css{
+            color: rgb(255, 115, 0);
+            background-color: burlywood;
+        }
+        .javascript{
+            color: rgb(80, 41, 255);
+            background-color: cornflowerblue;
+        }
+        table, td, th{
+            border: 1px solid gray;
+            border-collapse: collapse;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .tr1{
+            color: white;
+            background-color: black;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>myHomePage</h1>
+    <img src="snow.jpg" alt="증명사진">
+    <p>개발자를 꿈꾸며 열심히 공부하는 <span class="park">박준범</span>입니다.</p>
+    <ol>
+        <li>현재 학습하는 과목</li>
+            <ul>
+                <li class="html">html</li>
+                <li class="css">css</li>
+                <li class="javascript">javascript</li>
+            </ul>
+        <li>이번 학기 시간표</li>
+            <table>
+                    <tr class="tr1">
+                        <th></th>
+                        <th>월요일</th>
+                        <th>화요일</th>
+                        <th>수요일</th>
+                        <th>목요일</th>
+                    </tr>
+                    <tr>
+                        <td>1교시</td>
+                        <td colspan="2" class="html">html</td>
+                        <td>공강</td>
+                        <td rowspan="2"  class="javascript">javascript</td>
+                    </tr>
+                    <tr>
+                        <td>2교시</td>
+                        <td>공강</td>
+                        <td colspan="2" class="css" >css</td>
+                    </tr>
+            </table>
+    </ol>
+</body>
+</html>

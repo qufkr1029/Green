@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체선택방법</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <!-- 제이쿼리 == 자바스크립트 -->
+</head>
+<body>
+    <h2>안녕하세요0</h2>
+    <h2>안녕하세요1</h2>
+    <h2>안녕하세요2</h2>
+    <h2>안녕하세요3</h2>
+    <h2>안녕하세요4</h2>
+    <script>
+        // 제이쿼리는 두개의 파트로 구성된다.
+        // 1. 문서 객체(노드: html 요소)를 선택
+        // 2. 선택한 문서객체에 효과(기능) 적용
+
+        // 1. 문서 객체를 선택하는 방법
+        // - 기존의 자바스크립트로 문서객체를 선택하는 방법
+        document.getElementById('id'); // 겟 엘레먼트는 html요소를 선택하는것
+        document.getElementsByTagName('h1')[0]; // 여러개의 요소를 불러올 경우 배열 형태로 관리
+        document.querySelector('h1'); // 쿼리 셀렉터는 css의 선택자를 선택하는것
+        document.querySelector('#id');
+
+        // - 제이쿼리에서 문서객체를 선택하는 방법
+        // 1) CSS 선택자를 이용하는 방법
+        // $("선택자");
+        $("h1"); // $('태그이름 선택자')
+        $("*"); // 전체 선택자
+        $("#id") // id 선택자
+        $(".class"); //class 선택자
+
+        // 2) 자바스크립트로 가져온 문서객체를 이용하는 방법
+        let h = document.getElementById('id');
+        $(h);
+
+        // - 문서객체 생성하는 방법
+        // 1) 자바스크립트
+        let p = document.createElement('p'); // <p></p> 화면에 보이지는 않지만 만들어내는것과 같다
+
+        // 2) 제이쿼리
+        $('<p></p>');
+
+        //---------------------------------------------------------------------------------------
+        // 제이쿼리도 여러개의 요소를 불러올 경우 배열형태로 관리
+        $('h2'); // 위 h2 요소를 모두 선택한 상황 => 배열 형태로 관리
+        
+        // 1. 직접 생성한 배열을 제이쿼리가 관리하는 방법
+        //  1) .each(배열, 함수) => 배열의 요소를 하나씩 꺼내서 함수를 적용
+        let arr = ['red','blue','green','yellow','pink'];
+        
+        $.each(arr, function(index, item){ //index 배열의 인덱스 번호, item 배열의 요소
+        //    alert(index + ' : ' + item);
+        });
+        // 2) $(배열).each(함수) => 배열의 요소를 하나씩 꺼내서 함수를 적용
+        $(arr).each(function(index, item){ //index 배열의 인덱스 번호, item 배열의 요소
+        //    alert(index + ' : ' + item);
+        });
+
+        // 2. 문서 객체를 담은 배열
+        // - 모든 문서 객체의 동일한 효과를 부여하려면 그냥 사용
+        $('h2').css('color', 'red'); // 모든 h2 요소에 글자색을 빨간색으로 표기
+
+        // - 각각의 문서객체에 다르게 효과를 주고 싶다면 each()함수
+        $('h2').each(function(index, item){
+            // $(item).css('backgroundColor', arr[index]);
+            $(this).css('backgroundColor', arr[index]);
+            // this => 각각의 문서 객체
+        });
+
+    </script>
+</body>
+</html>

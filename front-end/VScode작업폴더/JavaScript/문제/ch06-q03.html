@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form action="#" name="frm1">
+        <table border="1">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="userid" id="userid"> </td>
+            </tr>        
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="userpwd" id="userpwd"> </td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="username" id="username"> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="회원가입" onclick="signUp()"> </td>
+                <td><input type="reset" value="다시작성"> </td>
+            </tr>
+        </table>
+    </form>
+
+    <h2>로그인</h2>
+    <form action="#" name="frm2">
+        <table border="1">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="chkuserid" id="chkuserid"> </td>
+            </tr>        
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="chkuserpwd" id="chkuserpwd"> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="로그인" onclick="signIn()"> </td>
+                <td><input type="reset" value="다시작성"> </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let memberList = []; //멤버 인스턴스가 여러개 담기는 배열
+
+        function Member(userid,userpwd,username) { //한 계정 정보를 가지는 생성자
+            this.userid = userid;
+            this.userpwd = userpwd;
+            this.username = username;            
+        }
+
+        function signUp (){ //회원가입
+            let id = document.forms.frm1.userid.value;
+            let pwd = document.forms.frm1.userpwd.value;
+            let name = document.forms.frm1.username.value;
+
+            let member = new Member(id, pwd, name);
+            
+            memberList.push(member);
+            alert("회원 가입에 성공하였습니다.");
+        }
+        function signIn (){ //로그인
+            let id = document.forms.frm2.chkuserid.value;
+            let pwd = document.forms.frm2.chkuserpwd.value;   
+
+            let flag = -1;
+
+            for(let i = 0; i < memberList.length ; i++){
+                if((memberList[i].userid == id) && (memberList[i].userpwd == pwd)){
+                    flag = i;
+                    alert(memberList[i].username + "님 환영합니다.");
+                    break;
+                // }else{
+                //     alert("로그인 실패하였습니다.")
+                }
+            }
+
+            if(flag == -1) {
+                alert("로그인 실패하였습니다.");
+            }
+        }   
+
+    </script>
+</body>
+</html>

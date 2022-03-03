@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .title{
+        font-size: 20px;
+        font-weight: bold;
+        width: 800px;
+        height: 50px;
+        border: 1px rgb(173, 168, 168) solid;
+        border-style: none none solid none ;
+        line-height: 50px;
+    }
+    .parent{
+        border: 1px ;
+        width: 280px;
+        height: 400px;
+        float: left;
+        /*플렉스 박스 형태*/
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        /*정렬방식 Main-Asix*/
+        justify-content: space-evenly;
+        /*정렬방식 Cross-Asix*/
+        align-items: flex-start;
+    }
+    .green{
+        color: rgb(29, 168, 29);
+    }
+</style>
+</head>
+<body>
+    <div class="title"><p>베스트도전&도전<span class="green">추천웹툰</span></p></div>
+    <div class="parent">
+        <div>에피소드</div>
+        <div class="box"><img src="웹툰1.jpg" alt="웹툰1"></div>
+        <div class="box"><img src="웹툰2.jpg" alt="웹툰2"></div>
+        <div class="box"><img src="웹툰3.jpg" alt="웹툰3"></div>
+    </div>
+    <div class="parent">
+        <div>옴니버스</div>
+        <div class="box"><img src="웹툰4.jpg" alt="웹툰4"></div>
+        <div class="box"><img src="웹툰5.jpg" alt="웹툰5"></div>
+        <div class="box"><img src="웹툰6.jpg" alt="웹툰6"></div>
+    </div>
+    <div class="parent">
+        <div>스토리</div>
+        <div class="box"><img src="웹툰7.jpg" alt="웹툰7"></div>
+        <div class="box"><img src="웹툰8.jpg" alt="웹툰8"></div>
+        <div class="box"><img src="웹툰9.jpg" alt="웹툰9"></div>
+    </div>
+</body>
+</html>

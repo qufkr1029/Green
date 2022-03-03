@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.naver.com" id="naver">네이버</a>
+    <script>
+        window.onload = function(){
+            let anchor = document.getElementById('naver');
+
+            anchor.addEventListener('click', function(e){
+                let chk = confirm('페이지 이동을 하시겠습니까???'); //Y : 이동,  N : 이동x
+                if(!chk){
+                    e.preventDefault(); //페이지 이동(a태그 기본기능)을 막는 기능
+                }
+            }, false)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>폼에서 데이터 읽어오거나 채워 넣기</h2>
+    <form action="#" name="frm1"> <!-- 프론트 엔드에서 어떤 정보를 서버에 전달해주는 역할 action에는 서버의 위치나 정보 --> 
+        이름 : <input type="text" name="username" id="username"><br> <!-- id와  name 은 사뭇 다름 id 는 css나 script에서 사용하고 name은 서버랑 연관이 많음  --> 
+        취미 : <br>
+        <input type="checkbox" name="hobby" id="movie" value="영화감상">영화감상
+        <input type="checkbox" name="hobby" id="game" value="게임">게임
+        <input type="checkbox" name="hobby" id="baker" value="제빵">제빵<br> 
+        성별 : <br>
+        <input type="radio" name="gender" id="male" value="남성">남
+        <input type="radio" name="gender" id="female" value="여성">여<br>
+        직업 : <br>
+        <select name="job" id="job">
+            <option value="front">프론트 엔드 개발자</option>
+            <option value="back">백 엔드 개발자</option>
+            <option value="full">풀 스택 개발자</option>
+        </select><br>
+        포부 : <br>
+        <textarea name="hope" id="hope" cols="30" rows="10"></textarea><br>
+        <input type="button" value="채우기" onclick="fill()">
+        <input type="submit" value="제출" onclick="return ok()">
+    </form>
+
+    <script>
+        function fill(){ // 미리 준비된 값으로 채우기
+            let frm = document.forms.frm1;
+            
+            frm.username.value = '홍길동';
+            frm.movie.checked = true;
+            frm.baker.checked = true;
+            frm.male.checked = true;
+            frm.job.selectedIndex = 2;
+            frm.hope.value = '열심히 해보겠습니다!';
+        }
+
+
+        function ok(){ // 폼에 채워진 데이터를 읽어와서 console에 출력하도록 하는 함수
+            let frm = document.forms.frm1; // <form action ~~~~ </form> 폼의 모든 요소들을 읽어 와서 frm 변수에 담긴다.
+            
+            // 이름에 입력된 값 읽어오기
+            let username = frm.username.value; // name = 'username'인 input 요소로 입력받은 값 가져오기
+            
+            // 취미 입력된 값 읽어오기 : 체크박스 => 여러개가 될 수 있다 => 즉 배열을 사용하면 된다.
+            let hobby = [];
+                if(frm.movie.checked){
+                    hobby.push(frm.movie.value);
+                }
+                if(frm.game.checked){
+                    hobby.push(frm.game.value);
+                }
+                if(frm.baker.checked){
+                    hobby.push(frm.baker.value);
+                }
+            
+            // 성별에 입력된 값 읽어오기
+            let gender;
+            if(frm.male.checked){
+                gender = frm.male.value;
+            }else if(frm.female.checked){
+                gender = frm.female.value;
+            }else{
+                gender = null;
+            }
+
+            // 직업에 입력된 값 읽어오기
+            let job = frm.job.value;
+
+            // 포부에 입력된 값 읽어오기
+            let hope = frm.hope.value;
+
+            console.log('이름 : ' + username);
+            console.log('취미 : ' + hobby);
+            console.log('성별 : ' + gender);
+            console.log('직업 : ' + job);
+            console.log('포부 : ' + hope);
+
+            return false;
+        }
+    </script>
+</body>
+</html>

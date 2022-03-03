@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .mainbox{
+            width: 500px;
+            height: 500px;
+            background-image: url('snowman.jpg');
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .clickbox{
+            margin: 0px;
+            text-align: left;
+        }
+        ul li{
+            display: inline;
+            text-transform: uppercase;
+            padding: 0 40px;
+            letter-spacing: 10px;
+        }
+        .memberbox1{
+            text-align: right;
+            position: absolute;
+            bottom: %;
+        }
+    </style>
+    <script>
+        function m1(){
+        location.href='login.html';
+        }
+        function m2(){
+        location.href='signup.html';
+        }
+    </script>
+</head>
+
+<body>
+    <div><h1>박준범 홈페이지입니다.</h1></div>
+    <div class="mainbox">
+        <div class="clickbox">
+            <div>
+                <ul>
+                    <li><a href="boardlist.html">자유게시판</a></li>
+                    <li><a href="">Q&A</a></li>
+                </ul>
+            </div>
+            <div></div>
+        </div>
+        <div class="memberbox1">
+            <input type="button" value="로그인" onclick="m1()">
+            <input type="button" value="회원가입" onclick="m2()">
+        </div>
+    </div>
+    <div class="tail"><h2>문서명 : 화면구형 포트폴리오 작성일 : 12/09, 저작권 : copyright@2021 박준범</h2></div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p태그영단어장</title>
+</head>
+<body>
+    <h2>영단어장 (p)</h2>
+    <input type="button" value="단어 추가" onclick="addWord()">
+    <input type="button" value="마지막 단어 삭제" onclick="lastRemoveWord()">
+    <input type="button" value="번호로 삭제" onclick="removeNumberWord()">
+    <input type="button" value="단어로 삭제" onclick="removeEngWord()">
+
+        <p> 1. apple : 사과 </p>
+        <p> 2. banana : 바나나 </p>
+        <p> 3. peach : 복숭아 </p>
+        <p> 4. coke : 콜라 </p>
+
+
+    <script>
+        function removeEngWord() {
+            // 힌트1. 'apple : 사과 ' --> 여기서 어떻게 apple를 꺼낼것인가
+
+            // 힌트2. String 객체에 split(문자)메서드 문자를 기준으로 문자열을 분할해서 배열로 바뀌는 메서드
+            // let str = 'a:b,c:d,e:f,g:h,i:j';
+            //     str.split(','); // => ['a:b','c:d','e:f','g:h','i:j']
+            //     str.split(':'); // => ['a','b,c','d,e','f,g','h,i','j']
+            //     str.split('a');
+            
+            // let str = '    soda    ';
+            // str.trim();   //=> "soda"
+
+            let p = document.getElementsByTagName('p');
+
+            if(!p[0]){
+                alert('삭제할 대상이 없습니다.');
+            }else{
+                let selectWord = prompt('삭제할 단어를 입력하세요');
+                
+                flag = -1;
+                for(let i = 0;i<p.length;i++){
+                    // // p요소에서 영단어 추출
+                    // p[i]                      //EX) <p> apple : 사과 </p>
+                    // .innerHTML                // apple : 사과
+                    // .split(':')[0]     // ['1. apple', '사과'] => [0] '  apple  '
+                    // .trim()             // 'apple'
+                    let engWord = p[i].innerHTML.split(':')[0].split('.')[1].trim();
+
+                    if(selectWord.trim()==engWord){
+                        flag = i;
+                        p[i].remove();
+                        break;
+                    }
+
+                } //for
+                
+                if(flag == -1){
+                    alert('해당 단어를 찾을 수 없습니다.');
+                }
+                numbering();
+            }
+        }
+
+        function removeNumberWord() {
+            
+            let p = document.getElementsByTagName('p');
+            if(!p[0]){
+                alert('삭제할 대상이 없습니다.');
+            }else{
+                let removeNumber = prompt('삭제할 번호를 입력하세요');
+                if(removeNumber <= 0 || p.length < removeNumber){
+                    alert('없는 번호를 입력했습니다. 다시 확인해주세요.');
+                }else{
+                    p[removeNumber-1].remove(); //배열 리스트의 마지막 요소 삭제
+                    //배열의 인덱스 : 0,1,2,3,4,5~~~~~~
+                    //입력한 번호 : 1,2,3,4,5,6
+                    numbering();
+                }
+
+                // -- 변경된 번호로 갱신하는 기능 --
+            }
+        }
+
+        function numbering(){
+            let p = document.getElementsByTagName('p');
+            for(let i = 0; i < p.length; i++){
+                // 기존의 번호 제거
+                let data = p[i].innerHTML.split('.')[1]; // <p> '3'       .        'apple : 사과'       </p>
+                //                                              [0]                     [1]
+                
+                // 새롭게 번호 부여(i)
+                p[i].innerHTML = (i+1) + '.' + data;     // <p> '2'.'apple : 사과'</p>
+            }
+        }
+
+        function lastRemoveWord() {
+            let p = document.getElementsByTagName('p'); // p요소로 이루어진 노드객체의 배열
+            if(!p[0]){ // p태그로 이루어진 배열의 첫 번째 요소가 없다면 => p태그가 없다
+                alert('삭제할 대상이 없습니다.');
+            }else{
+                p[p.length-1].remove(); // 배열 리스트의 마지막 요소 삭제
+            }
+        }
+
+        function addWord() {
+            //번호 매기기
+            let pList = document.getElementsByTagName('p');
+            let num = pList.length+1;
+
+            let engWord = prompt('영어 단어를 입력하세요.');
+            let korWord = prompt('한글 뜻을 입력하세요.');
+
+            let p = document.createElement('p'); //<p></p>
+
+            p.innerHTML = num + ". " + engWord + " : " + korWord; //<p>번호. 영단어 : 한글 뜻</p>
+            document.body.appendChild(p); 
+        }
+    </script>
+</body>
+</html>

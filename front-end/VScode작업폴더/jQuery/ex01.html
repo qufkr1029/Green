@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인메서드</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <!-- 제이쿼리 == 자바스크립트 -->
+</head>
+<body>
+    <script>
+        // 제이쿼리를 사용하기 위해서 제이쿼리 객체를 사용해야 한다.
+        // var $ = jQuery;
+
+        // 제이쿼리 문법 : $().attr().style().css~~~
+        // 제이쿼리에서 제공하는 모든 함수는 제이쿼리 객체를 사용해야 한다.
+
+        // 자바스크립트 : 화면의 모든 노드가 로딩된 후 동작해라
+        window.onload = function(){ // Java main메서드
+            alert('온로드!!');
+        };
+
+        // 같은 역할을 하는 제이쿼리
+        jQuery(document).ready(function(){
+
+        });
+        
+        
+        // ******
+
+        $(document).ready(function(){ // Java main메서드
+            alert('제이쿼리 레디1!!');
+        }); // 화면이 로드가 끝나면 함수가 동작시켜라!!
+        $(document).ready(function(){ // Java main메서드
+            alert('제이쿼리 레디2!!');
+        });
+        $(document).ready(function(){ // Java main메서드
+            alert('제이쿼리 레디3!!');
+        });
+
+        document.addEventListener("DOMContentLoaded", function(){
+
+        });
+
+    </script>
+</body>
+</html>

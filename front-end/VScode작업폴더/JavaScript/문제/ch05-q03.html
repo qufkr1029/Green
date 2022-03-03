@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arrayScore = [78,54,89,57,84,95,74,91,84,67,52,94,82];
+
+        // 1) 주어진 배열에서 합계, 평균 
+        let sum = 0;
+        let avg = 0;
+        
+        for(i in arrayScore){
+            sum += arrayScore[i];      // 배열 데이터를 읽어서 sum 변수에 '누적
+        }
+        document.write("합계 : " + sum + "<br>");
+        
+        avg = sum/arrayScore.length;
+        document.write("평균 : " + avg + "<br>");
+
+        document.write("<hr>");
+
+        // 2) 주어진 배열에서 최대값, 그리고 그 인덱스
+        let max = arrayScore[0];
+        let maxIndex = 0;
+        for(i in arrayScore){
+            if(arrayScore[i] >= max ){
+                max = arrayScore[i];
+                maxIndex = i;
+            }
+        }
+        document.write("최댓값 : " + max + "<br>");
+        document.write("최댓값의 인덱스 : " + maxIndex + "<br>");
+
+        document.write("<hr>");
+
+        // 3) 주어진 배열에서 최소값, 그리고 그 인덱스
+        let min = arrayScore[0];
+        let minIndex = 0;
+        for(i in arrayScore){
+            if(arrayScore[i] <= min ){
+                min = arrayScore[i];
+                minIndex = i;
+            }
+        }
+        document.write("최소값 : " + min + "<br>");
+        document.write("최솟값의 인덱스 : " + minIndex);
+        
+    </script>
+</body>
+</html>

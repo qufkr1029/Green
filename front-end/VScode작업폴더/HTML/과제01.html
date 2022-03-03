@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1"> <!--11행 4열-->
+        <caption>표 테이블</caption>
+        <tr>
+            <th colspan="4">기본정보</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <td><input type="text" name="userid" id="userid" placeholder="아이디를 입력하세요"></td>
+            <th>비밀번호</th>
+            <td><input type="password" name="userpassword" id="userpassword" placeholder="비밀번호를 입력하세요"> </td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" name="username" id="username" placeholder="이름을 입력하세요"></td>
+            <th>확인 비밀번호</th>
+            <td><input type="password" name="userpassword" id="userpassword" placeholder="다시 비밀번호를 입력하세요"></td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td><input type="email" name="useremail" id="useremail" placeholder="이메일 주소를 입력하세요"> </td>
+            <th>전화번호</th>
+            <td><input type="tel" name="phone" id="phone" placeholder="전화번호를 입력하세요"> </td>
+        </tr>
+        <tr>
+            <th colspan="4">기타정보</th>
+        </tr>
+        <tr>
+            <td>나이</td>
+            <td><input type="number" name="userage" id="userage" min="1" max="150"></td>
+            <td>성별</td>
+            <td><label><input type="radio" name="gender" id="gender">남</label> <label><input type="radio" name="gender" id="gender" checked>여</label></td>
+        </tr>
+        <tr>
+            <th rowspan="2">취미</th>
+            <td colspan="3"><label><input type="checkbox" name="hobby" id="hobby" checked>탁구 <input type="checkbox" name="hobby" id="hobby">농구 <input type="checkbox" name="hobby" id="hobby">축구</label></td>
+        </tr>
+        <tr>
+            <td colspan="3"><label><input type="checkbox" name="hobby" id="hobby">독서 <input type="checkbox" name="hobby" id="hobby">뜨게질 <input type="checkbox" name="hobby" id="hobby">십자수</label></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <label for="job">직업</label>
+                <select name="job" id="job">        
+                    <option value="java">관리자</option>
+                    <option value="html">인턴</option>
+                    <option value="css">판매직</option>
+                    <option value="javascript" selected>개발자</option> <!--selected로 미리 선택되어 있게 함-->
+                    <option value="oracle">무직</option>
+                </select>
+              </td>
+        </tr>
+        <tr>
+            <td colspan="4"><textarea name="introduce" id="introduce" cols="71" rows="10" placeholder="자기소개를 입력하세요"></textarea> </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="회원가입"></td>
+            <td colspan="2"><input type="reset" value="다시작성"></td>
+        </tr>
+       
+    </table>
+</body>
+</html>

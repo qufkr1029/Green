@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 브라우저에 저장 공간 => 임시로 저장할 데이터를 저장해서 쓸 수 있다.
+        //      storage 
+        //              -> session => 세션이 유지되는 동안만 저장되는 정보 공간
+        //              -> local => 디스크에 정보를 저장하는 공간 : 강제로 지우기 전까지는 유지되는 정보 공간
+
+        // 정보 저장 공간 => 데이터 => 'CRUD'
+
+        // create : 세션에 정보를 저장 => '키 : 값'   setItem()
+        sessionStorage.setItem('name','홍길동');
+
+        // read : 세션에 저장된 정보를 읽어오기  => '키를 통해 저장된 정보 읽어오기' getItem()
+        let username = sessionStorage.getItem('name');
+        console.log('이름 : ' + username)
+
+        // update : 정보 생성과 동일하게 사용된다.  setItem() (동일한 키가 존재할 경우)
+        sessionStorage.setItem('name', '고길동'); // 같은 이름의 키가 존재한다면 새로운 값으로 갱신
+
+        // Delete : 정보 삭제 removeItem()
+        sessionStorage.removeItem('name');
+        
+        // 저장된 모든 정보를 삭제 : clear()
+        sessionStorage.setItem('name','홍길동');
+        sessionStorage.setItem('age','30');
+        sessionStorage.setItem('job','의적');
+        sessionStorage.setItem('nations','조선');
+    
+        sessionStorage.clear();
+
+        // 로컬 스토리지 : 세션스토리지하고 사용법이 같다!!
+
+
+    </script>
+</body>
+</html>

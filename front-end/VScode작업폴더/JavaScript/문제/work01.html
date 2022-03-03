@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch03 연산자 문제</title>
+</head>
+<body>
+    <script>
+        //1.
+        document.write("<h2>Ch03 연산자</h2>");
+        document.write("<h3>1. 가로가 3이고 세로가 6인 사각형의 넓이</h3>");
+        let width = 3;
+        let height = 6;
+        let area = width*height;
+        document.write("넓이 : " + area);
+        //2.
+        document.write("<h3>2. 위 길이의 삼각형의 넓이<h3>");
+        let width1 = 3;
+        let height1 = 6;
+        let area1 = (width1*height1)/2;
+        document.write("넓이 : " + area1);
+        //3.
+        document.write("<h3>3. 성적이 40, 30, 10 나왔다 평균은?</h3>");
+        let a = 40;
+        let b = 30;
+        let c = 10;
+        let sum = a+b+c;
+        let aver = sum/3
+        document.write("평균 : " + aver);
+        //4.
+        document.write("<h3>4. 월급이 100원이다 연봉은? (세금20프로제외)</h3>");
+        let money = 100;
+        let realmoney = 100*0.8;
+        let sal = realmoney*12;
+        document.write("연봉 : " + sal);
+        //5.
+        document.write("<h3>5. 286 초를 분 초로 출력<h3>");
+        let time = 286;
+        let min = parseInt(286/60);
+        let sec = 286%60;
+        document.write("286초는 : " + min + "분" + sec + "초");
+        //6.
+        document.write("<h3>6. 176840원을 각 화폐의 종류로 매수 출력</h3>");
+        let money01 = 179840;
+        let unit = 50000;
+        let ohman = Math.floor(money01/unit); //소수점 내림 Math.floor
+        document.write("오만원권 : " + ohman + "장");
+        
+        money01 = money01 % unit;
+        unit = unit/5;
+        let man = Math.floor(money01/unit);
+        document.write("만원권 : " + man + "장");
+
+        money01 = money01 % unit;
+        unit = unit/2;
+        let ohchun = Math.floor(money01/unit);
+        document.write("오천원권 : " + ohchun + "장");
+
+        money01 = money01 % unit;
+        unit = unit/5;
+        let chun = Math.floor(money01/unit);
+        document.write("천원권 : " + chun + "장");
+
+        money01 = money01 % unit;
+        unit = unit/2;
+        let ohbak = Math.floor(money01/unit);
+        document.write("오백원권 : " + ohbak + "장");
+
+        money01 = money01 % unit;
+        unit = unit/5;
+        let bak = Math.floor(money01/unit);
+        document.write("백원권 : " + bak + "장");
+
+        money01 = money01 % unit;
+        unit = unit/2;
+        let ohship = Math.floor(money01/unit);
+        document.write("오십원권 : " + ohship + "장");
+
+        money01 = money01 % unit;
+        unit = unit/5;
+        let ship = Math.floor(money01/unit);
+        document.write("십원권 : " + ship + "장");
+
+
+        // let money1 = 176840;
+        // let dhaksdnjs = parseInt(176840/50000);
+        // let aksdnjs = parseInt((176840%100000)/10000);
+        // let cjsdnjs = parseInt(((176840%100000)%10000)/1000);
+        // let qordnjs = parseInt((((176840%100000)%10000)%1000)/100);
+        // let tlqdnjs = parseInt(((((176840%100000)%10000)%1000)%100)/10);
+        // document.write("176840원은 오만원권 " + dhaksdnjs + "장 만원권 " + aksdnjs + "장 천원권 " 
+        //                 + cjsdnjs + "장 백원 " + qordnjs + "개 십원 " + tlqdnjs + "개 이다.");
+        //7.
+        document.write("<h3>7. 어떤 정수의 값이 음수인지 양수인지 판단해서 음수면 ‘음수’ 양수면 ‘양수’ 0이면 ‘0’을 출력하는 코드를 작성하세요.</h3>");
+        let value = prompt("정수의 값을 입력하세요");
+        // let value = 10;
+        if(value<= 0){
+            document.write("음수입니다.");
+        }else if(value == 0){
+            document.write("0입니다.");
+        }else if(value >=0){
+            document.write("양수입니다.");
+        }else{
+            document.write("적당한 값을 넣어주세요.");
+        }
+        //8.
+        document.write("<h3>8.점수에 따라 등급을 출력해보자</h3>");
+        // 예)
+        // var num= 70;
+        // 90이상A
+        // 80이상B
+        // 70이상C
+        // 60이상D
+        // 59이하F
+        let num = prompt("점수를 입력하십시오");
+        //let num = 80;
+        if(num >= 90){
+            document.write("90점 이상입니다  A등급.");
+        }else if(num >= 80){
+            document.write("80점 이상입니다  B등급.");
+        }else if(num >= 70){
+            document.write("70점 이상입니다  C등급.");
+        }else if(num >= 60){
+            document.write("60점 이상입니다  D등급.");
+        }else if(num <= 59){
+            document.write("60점 미만입니다  E등급.");
+        }   
+        else{
+            document.write("적당한 값을 넣어주세요.");
+        }
+
+    </script>
+</body>
+</html>

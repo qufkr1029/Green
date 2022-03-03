@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #parent{
+            margin: 0 auto;
+            width: 500px;
+            background-color: grey;
+            /*overflow: hidden; /*자식요소의 높이를 잡아줌(원래는 잡히지 않는데)*/
+            
+        }
+        #parren::after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+        .inbox{
+            width: 200px;
+            height: 200px;
+        }
+        #bro1{
+            float: left;
+            background-color: orange;
+        }
+        #bro2{
+            float: right;
+            background-color: yellow;
+        }
+        #bro3{
+            clear: both; /*float으로 띄워진 박스1, 박스2 사이에 예를들어 얇은 판을 깔아둬서 그 다음
+                          박스 3이 오게끔 한다*/
+            background-color: yellowgreen;
+            
+        }
+        #other{
+        color: purple;
+        background-color: seashell;
+    }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="bro1" class="inbox">박스1</div>
+        <div id="bro2" class="inbox">박스2</div>
+        <div id="bro3" class="inbox">박스3</div>
+        <!-- ::after -->
+    </div>
+    <div id="other">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima voluptatibus nesciunt sed, incidunt temporibus animi ab? Voluptatem, molestias! Sunt vitae voluptatum doloremque exercitationem sapiente veniam maxime non at nobis nostrum?
+    </div>
+</body>
+</html>

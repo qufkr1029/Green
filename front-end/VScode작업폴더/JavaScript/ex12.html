@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #testBox{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            color: white;
+            background-color: tomato;
+            text-align: center;
+            line-height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="infoBox()">박스 위치 확인</button><br>
+    <button type="button" onclick="topBox()">☝</button>
+    <button type="button" onclick="leftBox()">👈</button>
+    <button type="button" onclick="bottomBox()">👇</button>
+    <button type="button" onclick="rightBox()">👉</button>
+    <div id="testBox">testBox</div>
+    
+    <script>
+        function topBox(){
+            let box = document.getElementById('testBox');
+            let moveBox = box.getBoundingClientRect();
+            box.style.top -= 10;
+        }
+        function leftBox(){
+            let box = document.getElementById('testBox');
+            let moveBox = box.getBoundingClientRect();
+            box.style.left -= 10;
+        }
+        function bottomBox(){
+            let box = document.getElementById('testBox');
+            let moveBox = box.getBoundingClientRect();
+            box.top +=10;
+        }
+        function rightBox(){
+            let box = document.getElementById('testBox');
+            let moveBox = box.getBoundingClientRect();
+            box.left -=10;
+        }
+
+        function infoBox(){
+            let box = document.getElementById('testBox');
+            let moveBox = box.getBoundingClientRect();
+
+            console.log("박스의 너비 : " + moveBox.width)
+            console.log("박스의 높이 : " + moveBox.height)
+            console.log("박스의 왼쪽상단 꼭지점 x위치 : " + moveBox.left)
+            console.log("박스의 왼쪽상단 꼭지점 y위치 : " + moveBox.top)
+            console.log("박스의 오른쪽하단 꼭지점 x위치 : " + moveBox.right)
+            console.log("박스의 오른쪽하단 꼭지점 y위치 : " + moveBox.bottom)
+        }
+    </script>
+</body>
+</html>

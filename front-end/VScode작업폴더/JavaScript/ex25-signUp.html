@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form action="#" name="signUp">
+        아이디 : <input type="text" name="userId" id="userId"><br>
+        비밀번호 : <input type="password" name="userPwd" id="userPwd"><br>
+        이름 : <input type="text" name="userName" id="userName"><br>
+        <input type="button" value="회원가입" onclick="sign()">
+    </form>
+
+    <script>
+        function sign(){  // 회원가입을 받은 정보를 세션에 저장
+            let userId = document.forms.signUp.userId.value;
+            let userPwd = document.forms.signUp.userPwd.value;
+            let userName = document.forms.signUp.userName.value;
+
+            // sessionStorage.setItem('id',userId);
+            // sessionStorage.setItem('pwd',userPwd);
+            // sessionStorage.setItem('name',userName);
+            
+            // localStorage.setItem('id',userId);
+            // localStorage.setItem('pwd',userPwd);
+            // localStorage.setItem('name',userName);
+
+            //-------------------------------------------------
+            // 원시데이터를 저장할 때는 위와 같은 방법 저장
+            // 참조데이터(객체)를 저장할 때는 위와 같은 방법으로 저장X
+            // => JSON : 서로 다른 체계의 언어간 데이터를 전송하기 위한 방법
+            //    (XML) 예전에는 xml사용
+            // javascript에서 사용하는 객체를 JSON 형식으로 변환 : JSON.stringify(객체)
+            // JSON형식의 데이터를 javascript에서 사용하는 객체로 변환 :JSON.parse(데이터)
+
+            let userInfo = new User(userId, userPwd, userName);
+            localStorage.setItem('info', JSON.stringify(userInfo));
+        }
+
+        function User(userId, userPwd, userName){
+            this.userId = userId;
+            this.userPwd = userPwd;
+            this.userName = userName;
+        }
+    </script>
+    
+</body>
+</html>

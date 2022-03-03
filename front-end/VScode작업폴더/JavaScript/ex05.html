@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="openWindow()">새창열기</button>
+    <button type="button" onclick="closeWindow()">새창닫기</button>
+    <button type="button" onclick="moveWindow()">새창이동</button>
+    <button type="button" onclick="resizeWindow()">크기변경</button>
+
+    <script>
+        let w;
+        function openWindow(){
+            let w = open('https://www.w3schools.com/jsref/dom_obj_form.asp','w3school','width=200px,height=200px,status=false');
+        }
+        function closeWindow(){
+            w.close();
+        }
+        function moveWindow(){
+            w.moveBy(-10, -10);
+        }
+        function resizeWindow(){
+            w.resize(10, 20)
+        }
+    </script>
+</body>
+</html>

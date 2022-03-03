@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //public void method(int a, int b){
+        
+        //}
+        function m(){
+            alert('반갑습니다.'); //경고창 표시 
+            location.href='ex02.html'; //다른 주소로 이동할 때 씀 상대주소, 절대주소 사용가능
+        }
+    </script>
+</head>
+<style>
+
+</style>
+<body>
+    <form action="ex02.html" method="post">
+        <label>이름 : <input type="text" name="name" value="안녕하세요"></label>
+
+        <input type="submit" value="전송">
+        <input type="reset" value="다시입력">
+        <input type="button" value="확인" onclick="m()">
+        <button type="submit" onclick="m()">전송</button>     <!--<input type="submit" value="전송"> 같은것-->
+    </form>
+</body>
+</html>

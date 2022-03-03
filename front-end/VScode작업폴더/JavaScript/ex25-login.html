@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>로그인</title>
+</head>
+<body>
+    <h2>로그인</h2>
+    <p id="userName"></p>
+    <form action="#" name="login">
+        아이디 : <input type="text" name="userId" id="userId"><br>
+        비밀번호 : <input type="password" name="userPwd" id="userPwd"><br>
+        <input type="button" value="로그인" onclick="log()">
+    </form>
+
+    <script>
+       
+        function log(){
+            // 입력된 정보
+            let inputUserId = document.forms.login.userId.value;
+            let inputUserPwd = document.forms.login.userPwd.value;
+        
+
+            // 저장된 정보
+            // let saveUserId = localStorage.getItem('id');
+            // let saveUserPwd = localStorage.getItem('pwd');
+            // let saveUsername = localStorage.getItem('name');
+
+            let info = JSON.parse(localStorage.getItem('info'));
+            console.log(info);
+            console.log(info.userId);
+            console.log(info.userPwd);
+            console.log(info.userName);
+            
+            if((info.userId == inputUserId) && (info.userPwd == inputUserPwd)){
+                let p = document.getElementById('userName');
+                p.innerHTML = info.userName;
+            }
+        }
+    </script>
+</body>
+</html>

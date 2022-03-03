@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+</head>
+<body>
+    <script>
+        console.log("Hello World!!");
+    </script>
+  
+
+    <!-- 호이스팅 -->
+    <script>
+    let age = confirm('당신의 나이를 입력하세요.');
+                // alert('경고창');  '메시지' 경고창으로 출력
+                //  confirm('Y/N');  '확인 취소를 묻는' 창 결과를 true, false로
+                // 저장하는 창 prompt('문자열 입력');  어떤 값을 문자열로 저장하는 창
+
+    if (age >= 60) {
+        console.log('노약자 무료');
+    } else if (age >= 20) {
+        console.log('성인 요금');
+    } else if (age >= 13) {
+        console.log('청소년 요금');
+    } else if (age >= 8) {
+        console.log('어린이 요금');
+    } else {
+        console.log('영유아 요금');
+    }
+
+    
+</script>
+</body>
+</html>

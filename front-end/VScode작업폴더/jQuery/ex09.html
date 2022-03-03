@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+    <h2>누구신가요</h2>
+    <h1>안녕하세요</h1>
+    
+
+    <script>
+        // $('h1').on('click', function(event){  // 실행할때 이미 화면에 존재하는 태그에만 적용한다.
+        //     $('<h1>안녕하세요</h1>').appendTo($('body'));
+        //     // 새롭게 추가되는 태그요소에는 이벤트가 적용되지 않는다.
+        // });
+
+        // 새롭게 만들어질 태그요소에도 이벤트를 붙이는 방법
+
+        // 1. 이벤트 핸들러를 미리 만들어두고 각각의 h1태그에 붙이는 방법
+        // let handler = function(){
+        //     $('<h1>안녕하세요</h1>').appendTo($('body')).click(handler); // 새롭게 생성된 태그 요소에도 이벤트 붙이기
+        // };
+        // $('h1').on('click', handler);  //기존의 태그에도 이벤트 생성
+
+        // 2. 이벤트를 body에다가 붙이는 방법
+        $('body').on('click', 'h1', function(event){
+            // 이벤트는 body에 붙이고 실제 작동대상은 h1인 경우에 이벤트를 동작시키는 방법
+            $('<h1>안녕하세요</h1>').appendTo($('body'));
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>켈린더</title>
+    <script src=""></script>
+    <style>
+        *{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="7" id="head">년도</th>
+                </tr>
+                <tr>
+                    <th>일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody">
+                <!-- 실제 캘린더가 생성될 부분 -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">
+                        <input type="month" id="selectMonth" onchange="selectMonth()">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

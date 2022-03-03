@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 그리드(격자) 라는 것이 무엇인가?
+          페이지를 설계하기 위한 방법론
+          그리드 컨테이너 : 부모 요소가 되는 그리드 전체의 영역
+          그리드 아이템 : 자식 요소, 그리드의 규칙에 의해 배치되는 실제 요소
+          그리드 셀 : 아이템이 들어가는 가상의 칸
+          그리드 라인 : 셀을 구분하는 선
+          그리드 트랙 : 행 또는 열을 가르키는 용어
+          그리드 갭 : 각 셀 사이의 간격
+          그리드 영역(에어리어) : 라인으로 그려지는 사각형 영역(셀들의 집합)
+        */
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #parent{
+            margin: 0 auto;
+            /* width: 900px; */
+            height: 500px;
+            border: 1px solid black;
+            background-color: gray;
+            /* 그리드 시스템 사용하기 */
+            display: grid;
+            /* grid-template-columns: 1fr 2fr; */
+            /* grid-template-columns: 100px 1fr 1fr; */
+                            /* 고정길이 가변길이를 나누어 사용 가능  */
+            grid-template-columns: repeat(3,minmax(100px, auto));
+                                     /* 최소 최대 길이를 고정할 수 있게 도와주는 함수  */
+            /* row-gap: 5px; 가로간격
+            column-gap: 10px; 세로 간격 */
+            grid-gap: 10px; /* 가로 세로 간격 */
+
+            /* 전체 셀 정렬 */
+            /* justify-content:; */
+            /* align-content: center ; */
+
+            /* 부모 요소에서 아이템 정렬 */
+            /* justify-items: center;
+            align-items: center; */
+        }
+        .items{
+            background-color: green;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 20px;
+        }
+        .item1{
+            grid-column-start: 1; /*시작라인*/
+            grid-column-end: 4; /*종료라인*/
+        }
+        .item2{}
+        .item3{
+            /* grid-column: 2/4; 2라인부터 4라인까지 */
+        }
+        .item4{
+            grid-column: 3;
+            grid-row: 2/4; /*행 라인 2에서 4까지*/
+            background-color: rgba(0, 0, 255 ,0.4);
+        }
+        .item5{
+            /* justify-self: center;
+            align-self: center; */
+
+        }
+        .item6{}
+        .item7{}
+        .item8{}
+        .item9{
+            grid-column: 3;
+            grid-row: 3/5;
+            background-color: rgba(255, 0, 0, 0.4);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="items item1">아이템1
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        </div>
+        <div class="items item2">아이템2</div>
+        <div class="items item3">아이템3</div>
+        <div class="items item4">아이템4</div>
+        <div class="items item5">아이템5</div>
+        <div class="items item6">아이템6</div>
+        <div class="items item7">아이템7</div>
+        <div class="items item8">아이템8</div>
+        <div class="items item9">아이템9</div>
+    </div>
+</body>
+</html>

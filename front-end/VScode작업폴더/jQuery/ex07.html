@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <style>
+        #box{
+            border: 1px black solid;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h3>안녕하세요1</h3>
+        <h3>안녕하세요2</h3>
+        <h3>안녕하세요3</h3>
+    </div>
+    <script>
+        // 문서 객체를 삭제하는 법 -> 객체요소.remove();
+        // $(document).ready(function(){
+        //     $('h3').first().remove();
+        //     $('h3').last().remove();            
+        // });
+
+        // 문서 객체의 내부를 비우는 법 -> 객체요소.empty();
+        $(document).ready(function(){
+          $('#box').empty(); // id가 box인 객체요소의 내부를 전부 비움
+        });
+
+
+    </script>
+</body>
+</html>
